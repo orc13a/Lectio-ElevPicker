@@ -1,0 +1,117 @@
+#ex_elevPicker_container {
+    margin: 10px 0px;
+    padding: 25px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#ex_elevPicker_randomBtnDiv {
+    display: inline-block;
+}
+
+#ex_elevPicker_getBtn {
+    border-radius: 5px;
+    border: none;
+    padding: 7px 0px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: 165px;
+    font-size: 14px;
+    background-color: #5BC879;
+    text-align: center;
+}
+
+#ex_elevPicker_settingsBtnDiv {
+    display: inline-block;
+    margin-left: 25px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+#ex_elevPicker_resetBtn {
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 0px;
+    line-height: 15px;
+    width: 125px;
+    background-color: #D6C742;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#ex_elevPicker_settingsBtn {
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 0px;
+    line-height: 15px;
+    width: 125px;
+    background-color: #D6C742;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+#ex_elevPicker_settingsBtn, #ex_elevPicker_getBtn {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#ex_elevPicker_pageTitle {
+    display: inline-block;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+#ex_elevPicker_noPickNumbersInputDiv {
+    padding: 15px 0px;
+    border-radius: 5px;
+    border: 2px solid #D6C742;
+    padding-left: 5px;
+}
+
+#ex_elevPicker_settingsDiv {
+    padding: 10px;
+    border-top: 1px solid black;
+    margin-top: 10px;
+}
+
+#ex_elevPicker_noPickNumbersInput {
+    border: 2px solid #5BC879;
+    border-radius: 5px;
+    padding: 5px;
+    width: 150px;
+}
+
+#ex_elevPicker_noPickNumbersInputText {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#ex_elevPicker_noPickNumbersInputEkstraText {
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+#ex_elevPicker_exInfo {
+    margin: 10px 0px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #5BC879;
+    border-radius: 5px;
+}
+
+#ex_elevPicker_studentNr {
+    text-align: right;
+}
