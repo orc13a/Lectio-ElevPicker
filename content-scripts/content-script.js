@@ -242,12 +242,12 @@ randomBtnListener.addEventListener('click', function () {
         if (settingInputNoPickNumberArr.includes(randomNr.toString()) === true) {
             for (let x = 0; x < settingInputNoPickNumberArr.length; x++) {
                 var newRandom = getRandomNr(min,max);
-                if (newRandom.toString() !== settingInputNoPickNumberArr[x]) {
+                if (settingInputNoPickNumberArr.includes(newRandom.toString()) === false) {
                     break;
                 }
             }
-            // console.log(randomNr);
-            // console.log(newRandom);
+            // console.log('ran:' +randomNr);
+            // console.log('new:' + newRandom);
             showWinner(newRandom);
         } else {
             showWinner(randomNr);

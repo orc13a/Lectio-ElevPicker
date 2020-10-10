@@ -1,6 +1,6 @@
 {
     "name": "Lectio ElevPicker",
-    "version": "1.0.0",
+    "version": "1.0.5",
     "description": "Du som lærer kan finde en tilfældig elev under siden elever for en klasse i Lectio.",
     "permissions": ["storage"],
     "content_scripts": [
