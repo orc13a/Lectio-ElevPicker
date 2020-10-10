@@ -16,7 +16,7 @@
     line-height: 20px;
     cursor: pointer;
     letter-spacing: 1px;
-    width: 165px;
+    width: 185px;
     font-size: 14px;
     background-color: #C85B5B;
     color: white;
@@ -88,7 +88,7 @@
 }
 
 #ex_elevPicker_noPickNumbersInput {
-    border: 2px solid #C85B5B;
+    border: 2px solid black;;
     border-radius: 5px;
     padding: 5px;
     width: 150px;

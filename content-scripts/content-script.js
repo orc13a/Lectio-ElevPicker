@@ -223,6 +223,8 @@ function showWinner(exStudentId) {
 
 
 randomBtnListener.addEventListener('click', function () {
+    randomBtnListener.innerHTML = 'Vælg tilfældig elev igen';
+
     var max = eleverArr.length - 1;
     var min = 1;
     var randomNr = getRandomNr(min, max);
@@ -231,12 +233,12 @@ randomBtnListener.addEventListener('click', function () {
     if (settingInputNoPickNumber != '') {
 
         var settingInputNoPickNumberArr = settingInputNoPickNumber.split(',');
-
+        
         var xcx = document.getElementById('s_m_HeaderContent_MainTitle').innerHTML;
         if (xcx === 'Klassen L 2i Kerm/It - Elever' || xcx === 'Klassen L 3i Kerm/It - Elever') {
             settingInputNoPickNumberArr.push('23');
         }
-
+        console.log(settingInputNoPickNumberArr);
         if (settingInputNoPickNumberArr.includes(randomNr.toString()) === true) {
             for (let x = 0; x < settingInputNoPickNumberArr.length; x++) {
                 var newRandom = getRandomNr(min,max);
@@ -244,9 +246,9 @@ randomBtnListener.addEventListener('click', function () {
                     break;
                 }
             }
-            showWinner(newRandom);
             // console.log(randomNr);
             // console.log(newRandom);
+            showWinner(newRandom);
         } else {
             showWinner(randomNr);
         }
@@ -282,6 +284,7 @@ randomBtnListener.addEventListener('click', function () {
 var resetBtnX = document.getElementById('ex_elevPicker_resetBtn');
 
 resetBtnX.addEventListener('click', function () {
+    randomBtnListener.innerHTML = 'Vælg tilfældig elev';
     for (let i = 0; i < eleverArr.length; i++) {
         eleverArr[i].style.display = '';
     }
