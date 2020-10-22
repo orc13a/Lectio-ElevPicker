@@ -97,7 +97,7 @@ noPickNumbersInputDiv.appendChild(noPickNumbersInputEkstraText);
 
 // UPS in settings
 var exInfo = document.createElement('div');
-exInfo.innerHTML = 'Lectio ElevPicker vælger en elev ud fra deres plads i tabellen og ikke deres elev nummer.';
+exInfo.innerHTML = 'Lectio ElevPicker vælger en elev ud fra deres plads i tabellen og ikke deres elev nummer.<br><br><a target="_blank" href="https://github.com/orc13a/Lectio-ElevPicker">Lectio ElevPicker\'s kode (Link til GitHub)</a>';
 exInfo.setAttribute('id', 'ex_elevPicker_exInfo');
 settingDiv.appendChild(exInfo);
 
@@ -234,11 +234,6 @@ randomBtnListener.addEventListener('click', function () {
 
         var settingInputNoPickNumberArr = settingInputNoPickNumber.split(',');
         
-        // var xcx = document.getElementById('s_m_HeaderContent_MainTitle').innerHTML;
-        // if (xcx === 'Klassen L 2i Kerm/It - Elever' || xcx === 'Klassen L 3i Kerm/It - Elever') {
-        //     settingInputNoPickNumberArr.push('23');
-        // }
-        //console.log(settingInputNoPickNumberArr);
         if (settingInputNoPickNumberArr.includes(randomNr.toString()) === true) {
             for (let x = 0; x < settingInputNoPickNumberArr.length; x++) {
                 var newRandom = getRandomNr(min,max);
@@ -246,34 +241,13 @@ randomBtnListener.addEventListener('click', function () {
                     break;
                 }
             }
-            // console.log('ran:' +randomNr);
-            // console.log('new:' + newRandom);
             showWinner(newRandom);
         } else {
             showWinner(randomNr);
         }
 
     } else {
-
-        // xcxArr = [];
-
-        // var xcx = document.getElementById('s_m_HeaderContent_MainTitle').innerHTML;
-        // if (xcx === 'Klassen L 2i Kerm/It - Elever' || xcx === 'Klassen L 3i Kerm/It - Elever') {
-        //     xcxArr.push('23');
-        // }
-
-        // if (xcxArr.includes(randomNr.toString()) === true) {
-        //     for (let x = 0; x < xcxArr.length; x++) {
-        //         var newRandom2 = getRandomNr(min,max);
-        //         if (newRandom2.toString() !== xcxArr[x]) {
-        //             break;
-        //         }
-        //     }
-        //     showWinner(newRandom2);
-        // } else {
-            showWinner(randomNr);
-        //}
-
+        showWinner(randomNr);
     }
 });
 
