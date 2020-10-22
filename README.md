@@ -20,6 +20,6 @@ Lectio ElevPicker gemmer ingen personlig information om nogen.
 
 I fremtiden kommer der måske en funktion som gememr de elev fra en klasse som er blevet valgt før. Der kommer Lectio ElevPicker til at gemme elevernes ElevPicker nummer.
 
-
+------
 
 Lavet af Oliver Risager Christensen.
