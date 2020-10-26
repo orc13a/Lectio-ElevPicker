@@ -101,6 +101,12 @@ exInfo.innerHTML = 'Lectio ElevPicker vælger en elev ud fra deres plads i tabel
 exInfo.setAttribute('id', 'ex_elevPicker_exInfo');
 settingDiv.appendChild(exInfo);
 
+// Extension version text
+var exVersionText = document.createElement('div');
+exVersionText.innerHTML = '1.0.8'; // page version
+exVersionText.setAttribute('id', 'ex_elevPicker_pageVersion');
+pageBtnContainer.appendChild(exVersionText);
+
 // ----------------------------
 // Check toggel
 // ----------------------------

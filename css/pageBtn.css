@@ -116,3 +116,9 @@
 #ex_elevPicker_studentNr {
     text-align: right;
 }
+
+#ex_elevPicker_pageVersion {
+    font-style: italic;
+    margin-top: 5px;
+    opacity: 0.5;
+}
