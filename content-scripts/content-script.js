@@ -101,11 +101,22 @@ exInfo.innerHTML = 'Lectio ElevPicker vælger en elev ud fra deres plads i tabel
 exInfo.setAttribute('id', 'ex_elevPicker_exInfo');
 settingDiv.appendChild(exInfo);
 
+var exHelpLink = document.createElement('a');
+exHelpLink.innerHTML = 'Hjælp til Lectio ElevPicker';
+exHelpLink.setAttribute('href', '#');
+exHelpLink.setAttribute('id', 'ex_elevPicker_onpageHelpLink');
+
 // Extension version text
-var exVersionText = document.createElement('div');
-exVersionText.innerHTML = '1.0.8'; // page version
+var exVersionText = document.createElement('span');
+exVersionText.innerHTML = '1.0.8 | '; // page version
 exVersionText.setAttribute('id', 'ex_elevPicker_pageVersion');
-pageBtnContainer.appendChild(exVersionText);
+
+var exVersionTextDiv = document.createElement('div');
+exVersionTextDiv.setAttribute('id', 'ex_elevPicker_pageVersionDiv');
+pageBtnContainer.appendChild(exVersionTextDiv);
+
+exVersionTextDiv.appendChild(exVersionText);
+exVersionTextDiv.appendChild(exHelpLink);
 
 // ----------------------------
 // Check toggel
