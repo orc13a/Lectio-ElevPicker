@@ -24,21 +24,21 @@
         </div>
         <!-- NAV BTNS -->
         <div class="navBtns">
-            <div class="navBtn">
-                <a href="">
+            <div class="navBtn" id="helpPageContent-btn" onclick="navbtn(this)">
+                <a href="#helpPageContent">
                     <div>
                         HJÆLP
                     </div>
                 </a>
             </div>
-            <div class="navBtn">
-                <a href="">
+            <div class="navBtn" id="getStartedPageContent-btn" onclick="navbtn(this)">
+                <a href="#getStartedPageContent">
                     <div>
                         KOM I GANG
                     </div>
                 </a>
             </div>
-            <div class="navBtn">
+            <!-- <div class="navBtn">
                 <a target="_blank" href="https://github.com/orc13a/Lectio-ElevPicker">
                     <div>
                         GITHUB
@@ -51,15 +51,15 @@
                         HENT
                     </div>
                 </a>
-            </div>
+            </div> -->
         </div>
         <!-- NAV BTNS END -->
     </div>
     <!-- NAV END -->
     <!-- PAGE CONTENT -->
-    <div class="pc">
-        <embed type="text/markdown" src="https://github.com/orc13a/Lectio-ElevPicker/blob/main/README.md#lectio-elevpicker" width="100%" height="600">
-        <!-- <div id="startContnet">
+    <div class="pc" id="mainPageContent">
+        <!-- <embed type="text/markdown" src="https://github.com/orc13a/Lectio-ElevPicker/blob/main/README.md#lectio-elevpicker" width="100%" height="600"> -->
+        <div id="startContnet">
             <p>
                 Du som lærer kan finde en tilfældig elev under siden elever for en klasse i Lectio.<br>
                 Denne extension er til at vælge en tilfældig elev i Lectio fra en klasse.<br>
@@ -81,12 +81,27 @@
     
                 I fremtiden kommer der måske en funktion som gememr de elev fra en klasse som er blevet valgt før. Der kommer Lectio ElevPicker til at gemme elevernes ElevPicker nummer.
             </p>
-        </div> -->
+        </div>
     </div>
     <!-- PAGE CONTENT END -->
+    <!-- HELP CONTENT -->
+    <div class="helpContent" id="helpPageContent" style="display: none;">
+        hej help
+    </div>
+    <!-- HELP CONTENT END -->
+    <!-- GET STARTED CONTENT -->
+    <div class="getStartedContent" id="getStartedPageContent" style="display: none;">
+        hej get started
+    </div>
+    <!-- GET STARTED CONTENT END -->
     <!-- FOOTER -->
-    <div>
-        kontakt
+    <div class="footerContainer">
+        <p>
+            <b>Kontakt:</b> orc-developer@outlook.com
+        </p>
+        <p>
+            <i>Extension af Oliver Risager Christensen</i>
+        </p>
     </div>
     <!-- FOOTER END -->
 </body>
