@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectio ElevPicker | Kom i gang</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/orc13a/Lectio-ElevPicker/github-page/images/icon16_v2.png" type="image/png" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- NAV -->
+    <div class="nav">
+        <div style="display: inline-block;">
+            <a href="index.html" style="text-decoration: none; color: black;">
+                <div class="navHeaderImg">
+                    <img src="https://raw.githubusercontent.com/orc13a/Lectio-ElevPicker/github-page/images/icon512_v2.png" style="vertical-align:middle;" alt="logo" height="60" width="auto">
+                    <span class="navHeaderText">
+                        Lectio ElevPicker
+                    </span>
+                </div>
+            </a>
+        </div>
+        <!-- NAV BTNS -->
+        <div class="navBtns">
+            <div class="navBtn" id="helpPageContent-btn">
+                <a href="help.html">
+                    <div>
+                        HJÆLP
+                    </div>
+                </a>
+            </div>
+            <div class="navBtn" id="getStartedPageContent-btn">
+                <a href="get-started.html">
+                    <div>
+                        KOM I GANG
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- NAV BTNS END -->
+    </div>
+    <!-- NAV END -->
+    <div id="browserIsSafariAlert" class="browserIsSafariAlert" style="display: none;">
+        Du bruger safari og denne side er ikke tilgængelig når du bruger denne browser. Det er efter at ElevPicker ikke er tilgængelig til Safari. Du skal bruge Chrome, Firefox, Edge eller Opera for at bruge ElevPicker eller denne side.
+    </div>
+    <!-- GET STARTED CONTENT -->
+    <div class="getStartedContent" id="getStartedPageContent">
+        <span>Din browser</span>
+        <div class="browserDropdownContainer">
+            <div class="browserDropdown" id="userBrowser" onclick="selectBrowser()">
+                <img src="" id="selectedBrowserIcon" height="32" width="auto" style="vertical-align: middle;"> <span id="browserName"></span>
+            </div>
+            <!---->
+            <div class="browserDropdownContent" id="browserDropdownContent">
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Chrome">
+                    <img src="./images/Chrome-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Chrome</span>
+                </div>
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Firefox">
+                    <img src="./images/Firefox-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Firefox</span>
+                </div>
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Edge">
+                    <img src="./images/Edge-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Egde</span>
+                </div>
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Opera">
+                    <img src="./images/Opera-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Opera</span>
+                </div>
+            </div>
+        </div>
+        <h2 id="efterinstallation">Det første efter installation</h2>
+        <p class="p-headsup">
+            ElevPicker er lavet til bare at virke inde på Lectio. Så man behøver ikke at bruge extension ved at klikke på dens ikon.<br>
+            Så dette emne kan du springe over, men du mere end velkommen til at læse det. Men vigtigere informationer kommer i "<a class="link" href="#hvordanbrugerjegelevpicker">Hvordan bruger jeg ElevPicker</a>". 
+        </p>
+        <p>
+            Efter du har tilføjet ElevPicker til <span class="ABC" id="browser_t"></span> bliver extension'en lagt op til højre i din browser.
+        </p>
+        <div class="ABC aBrowserContent" id="Chrome_pagecontent" style="display: none;">
+            <p>
+                Det kan godt ske at ElevPicker er blevet gemt indenbag puslespilsbrikken.<br>
+                Hvis det er sagen, så for at finde ElevPicker skal du først klikke på brikken få at kunne se og klikke på ElevPicker.
+            </p>
+            <p>
+                Hvis du vil slippe for at skulle klikke på puslespilsbrikken hver gang du vil klikke på ElevPicker.<br>
+                Så kan du gøre følgende for at få ElevPicker til at blive ude for puslespilsbrikken og side ved siden af brikken oppe i højre hjørne af din browser.<br>
+                <br>
+            </p>
+            <ol>
+                <li>
+                    Klik på puslespilsbrikken.
+                </li>
+                <li>
+                    Find ElevPicker.
+                </li>
+                <li>
+                    Ud fra ElevPicker kan du klikke på <code>vægstift</code> ikonet eller klikke på de tre prikker og derefter <code>fastgør</code>.
+                </li>
+            </ol>
+            <div class="gifHelpContainer">
+                <button class="gifHelpBtn" id="Chrome_puzzelGifBtn" onclick="gifHelp(this, 'Chrome_puzzelBtn')">Se video</button>
+                <div class="gifHelpDiv" id="Chrome_puzzelBtn" style="display: none;">
+                    <img class="gifHelp" src="./images/gifs/Chrome-puzzle.gif" height="auto" width="400">
+                </div>
+            </div>
+        </div>
+        <div class="ABC aBrowserContent" id="noChrome_pagecontent" style="display: none;">
+            <div class="gifHelpContainer">
+                <button class="gifHelpBtn" id="noChrome_cornerGifBtn" onclick="gifHelp(this, 'noChrome_cornerBtn')">Se video</button>
+                <div class="gifHelpDiv" id="noChrome_cornerBtn" style="display: none;">
+                    <img class="gifHelp" src="./images/gifs/Firefox-corner.gif" height="auto" width="400">
+                </div>
+            </div>
+        </div>
+        <h2 id="hvordanbrugerjegelevpicker">Hvordan bruger jeg ElevPicker</h2>
+        <p>
+            ElevPicker er kun lavet til at vrike på en hjemmeside og det er Lectio, og inde på Lectio virker ElevPicker kun på en klasses elev side.
+        </p>
+        <p>
+            Du kan bruge ElevPicker ved at gå ind på en klasses elev side. Her er vejen der ind:
+        </p>
+        <ol>
+            <li>
+                Inde på Lectio over dit profil billede, der er fem knapper. Der klikker du på <code>Hovedmenu</code>.
+            </li>
+            <li>
+                Derefter finder du punket <code>Klasse</code> på listen og klikker.
+            </li>
+            <li>
+                Her vælger du bare en klasse, ved at klikke på et klasse navn.
+            </li>
+            <li>
+                Mellem klassens skema og klasse navnet. Der er frem "knapper", du skal klikke på <code>Elever</code>.
+            </li>
+            <li>
+                Sådan! Du kan nu bruge ElevPicker. Hvis du ikke kan så må du meget gerne skrive til mig, så kan jeg se om der er en fejl med ElevPicker.
+            </li>
+        </ol>
+        <h2 id="hideelevpicker">Skjul / vis ElevPicker på elever siden</h2>
+        <p>
+            Du kan skjule ElevPicker fra "Elever" siden, det kunne være du skulle taget et screenshot af siden eller noget.
+        </p>
+        <p>
+            <ol>
+                <li>
+                    Først finder du ElevPicker oppe i højre hjørne af din browser. <span class="ABC" id="Chrome_pagecontent" style="display: none;">ElevPicker kan være indenbag puslespilsbrikken, læs mere om hvordan du finde ElevPicker indenbag puslespilsbrikken <a class="link" href="#efterinstallation">her</a>.</span>
+                </li>
+                <li>
+                    Du klikker på ElevPicker's ikon og derefter vil et lille vindue komme frem. I vinduet kan du vælge om ElevPicker skal <code>sjkules</code> eller <code>vises</code>.
+                </li>
+            </ol>
+        </p>
+        <div class="ABC aBrowserContent" id="Chrome_pagecontent" style="display: none;">
+            <div class="gifHelpContainer">
+                <button class="gifHelpBtn" id="Chrome_popupGifBtn" onclick="gifHelp(this, 'Chrome_popupBtn')">Se video</button>
+                <div class="gifHelpDiv" id="Chrome_popupBtn" style="display: none;">
+                    <img class="gifHelp" src="./images/gifs/Chrome-popup.gif" height="auto" width="400">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- GET STARTED CONTENT END -->
+    <!-- FOOTER -->
+    <div class="footerContainer">
+        <p>
+            <b>Kontakt:</b> orc-developer@outlook.com
+        </p>
+        <p>
+            <i>Extension af Oliver Risager Christensen</i>
+        </p>
+    </div>
+    <!-- FOOTER END -->
+</body>
+<script src="./js/safariCheck.js"></script>
+<script src="./js/gifBtn.js"></script>
+<script src="./js/page-viewer-controler.js"></script>
+</html>

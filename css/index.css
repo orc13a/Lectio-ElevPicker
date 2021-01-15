@@ -44,6 +44,27 @@ body {
     transition: 0.5s;
 } */
 
+.browserIsSafariAlert {
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgba(232, 0, 0, 0.25);
+    border: 2px solid rgb(232, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.downloadBtn {
+    border: 2px solid white;
+    border-radius: 10px;
+    line-height: 38px;
+    width: 150px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: rgba(246, 231, 98);
+}
+
 .navBtn a {
     color: black;
     text-decoration: none;
@@ -53,7 +74,7 @@ body {
 .navBtn:hover {
     /* background-color: rgba(211, 211, 211, 0.4); */
     /* background-color: rgb(200, 91, 90, 0.4); */
-    background-color: rgb(246, 231, 98, 0.4);
+    background-color: rgba(246, 231, 98, 0.4);
     border-radius: 10px;
     transition: 0.3s;
 }
@@ -72,9 +93,134 @@ body {
     
 }
 
+.browserDropdownContainer {
+    display: inline-table;
+    padding: 0px 8px;
+    min-width: 140px;
+    text-align: center;
+    margin-bottom: 50px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
+}
+
+.browserDropdown {
+    border-radius: 10px;
+    border: 2px solid lightgray;
+    cursor: pointer;
+    padding: 12px;
+}
+
+.browserDropdown > span {
+    position: relative;
+    top: 2px;
+}
+
+.browserDropdownContent {
+    display: none;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 2;
+    overflow: auto;
+    min-width: 136px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    text-align: left;
+}
+
+.browserDropdownContent > div {
+    padding: 10px;
+}
+
+.browserDropdownContentBtn {
+    
+}
+
+.browserDropdownContentBtn:hover  {
+    background-color: rgb(211, 211, 211, 0.25);
+    cursor: pointer;
+}
+
+.browserDropdownContentBtn > span {
+    position: relative;
+    top: 2px;
+}
+
+.show {
+    display: block;
+}
+
+.p-headsup {
+    font-family: 'Roboto Mono', monospace;
+    border: 2px solid rgba(255, 208, 0, 1);
+    border-radius: 10px;
+    background-color: rgba(255, 208, 0, 0.25);
+    padding: 20px;
+    margin: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.link {
+    color: black;
+}
+
+.link:hover {
+    text-decoration: none;
+}
+
+.gifHelpContainer {
+
+}
+
+.gifHelpBtn {
+    border-radius: 10px;
+    border: none;
+    line-height: 38px;
+    width: 100px;
+    cursor: pointer;
+    border: 2px solid white;
+    outline: none;
+}
+
+.gifHelpBtn:hover {
+    border: 2px solid lightgray;
+}
+
+.gifHelpDiv {
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.gifHelp {
+    border-radius: 10px;
+    border: 2px solid lightgray;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+    background-color: rgb(27, 31, 35, 0.05);
+    padding: 5px 8px 8px 8px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+ol {
+    margin: 75px 0px;
+}
+
+li {
+    margin: 30px 0px;
+}
+
 .footerContainer {
     background-color: rgb(211, 211, 211, 0.5);
     padding: 15px;
-    margin-top: 100px;
+    margin-top: 150px;
     box-shadow: 0px -6px 24px rgba(0, 0, 0, 0.15);
 }

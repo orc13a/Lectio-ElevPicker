@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,15 +24,15 @@
         </div>
         <!-- NAV BTNS -->
         <div class="navBtns">
-            <div class="navBtn" id="helpPageContent-btn" onclick="navbtn(this)">
-                <a href="#helpPageContent">
+            <div class="navBtn" id="helpPageContent-btn">
+                <a href="help.html">
                     <div>
                         HJÆLP
                     </div>
                 </a>
             </div>
-            <div class="navBtn" id="getStartedPageContent-btn" onclick="navbtn(this)">
-                <a href="#getStartedPageContent">
+            <div class="navBtn" id="getStartedPageContent-btn">
+                <a href="get-started.html">
                     <div>
                         KOM I GANG
                     </div>
@@ -56,6 +56,9 @@
         <!-- NAV BTNS END -->
     </div>
     <!-- NAV END -->
+    <div id="browserIsSafariAlert" class="browserIsSafariAlert" style="display: none;">
+        Du bruger safari. ElevPicker ikke er tilgængelig til Safari. Du skal bruge Chrome, Firefox, Edge eller Opera for at bruge ElevPicker.
+    </div>
     <!-- PAGE CONTENT -->
     <div class="pc" id="mainPageContent">
         <!-- <embed type="text/markdown" src="https://github.com/orc13a/Lectio-ElevPicker/blob/main/README.md#lectio-elevpicker" width="100%" height="600"> -->
@@ -69,7 +72,7 @@
                 <br>
                 Hvis der er syge eller fraværende elever kan man også sige hvilke tal som ikke skal trækkes tilfældigt.
             </p>
-            <h2 style="margin-top: 50px;">Spørgsmål om ElevPicker</h2>
+            <h2 id="about" style="margin-top: 50px;">Spørgsmål om ElevPicker</h2>
             <p>
                 <h4>Er Lectio ElevPicker farlig?</h4>
                 Lectio ElevPicker er ikke farlig eller gør ikke nogen skade på din computer. Alle extensions i Google Chrome eller Firefox bliver kigget igennem af AI og Google / Firefox udviklere.
@@ -82,18 +85,43 @@
                 I fremtiden kommer der måske en funktion som gememr de elev fra en klasse som er blevet valgt før. Der kommer Lectio ElevPicker til at gemme elevernes ElevPicker nummer.
             </p>
         </div>
+        <br>
+        <br>
+        <div>
+            <h2 id="install">Hent ElevPicker</h2>
+            <p>
+                Du kan hente ElevPicker til Chrome, Firefox, Microsoft Edge og Opera.
+            </p>
+            <p>
+                <div style="margin-bottom: 50px">
+                    <img src="./images/Chrome-icon.png" height="32" width="auto" style="vertical-align: middle;">
+                    <img src="./images/Edge-icon.png" height="32" width="auto" style="vertical-align: middle;">
+                    <img src="./images/Opera-icon.png" height="32" width="auto" style="vertical-align: middle;">
+                    <span>For Chrome, Edge eller Opera*. Skal du hente ElevPicker her</span>
+                    <button title="et link" class="downloadBtn" onclick="linkToStore('Chrome')">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;" width="18" height="18" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                            <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
+                        </svg>
+                        Hent
+                    </button>
+                </div>
+            </p>
+            <p>
+                <div>
+                    <img src="./images/Firefox-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>For Firefox. Skal du hente ElevPicker her</span>
+                    <button title="et link" class="downloadBtn" onclick="linkToStore('Firefox')">
+                        <svg xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;" width="18" height="18" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                            <path d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z"/>
+                        </svg>
+                        Hent
+                    </button>
+                </div>
+            </p>
+        </div>
     </div>
     <!-- PAGE CONTENT END -->
-    <!-- HELP CONTENT -->
-    <div class="helpContent" id="helpPageContent" style="display: none;">
-        hej help
-    </div>
-    <!-- HELP CONTENT END -->
-    <!-- GET STARTED CONTENT -->
-    <div class="getStartedContent" id="getStartedPageContent" style="display: none;">
-        hej get started
-    </div>
-    <!-- GET STARTED CONTENT END -->
     <!-- FOOTER -->
     <div class="footerContainer">
         <p>
@@ -102,8 +130,20 @@
         <p>
             <i>Extension af Oliver Risager Christensen</i>
         </p>
+        <p>
+            *Man skal have en anden plugin for at ElevPicker kan virker i Opera. Det er en Opera plugin som gør at man kan tilføje Chrome extensions.
+        </p>
     </div>
     <!-- FOOTER END -->
 </body>
-<script src="./js/page-viewer-controler.js"></script>
+<script src="./js/safariCheck.js"></script>
+<script>
+    function linkToStore(browser) {
+        if (browser === 'Chrome') {
+            window.open('https://chrome.google.com/webstore/detail/lectio-elevpicker/gcipcglhgdgdcjipdmlgfhgmcbeoenem', '_blank');
+        } else {
+            window.open('https://addons.mozilla.org/en-US/firefox/addon/lectio-elevpicker/', '_blank');
+        }
+    }
+</script>
 </html>

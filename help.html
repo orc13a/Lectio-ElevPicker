@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectio ElevPicker | Hjælp</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/orc13a/Lectio-ElevPicker/github-page/images/icon16_v2.png" type="image/png" sizes="16x16">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- NAV -->
+    <div class="nav">
+        <div style="display: inline-block;">
+            <a href="index.html" style="text-decoration: none; color: black;">
+                <div class="navHeaderImg">
+                    <img src="https://raw.githubusercontent.com/orc13a/Lectio-ElevPicker/github-page/images/icon512_v2.png" style="vertical-align:middle;" alt="logo" height="60" width="auto">
+                    <span class="navHeaderText">
+                        Lectio ElevPicker
+                    </span>
+                </div>
+            </a>
+        </div>
+        <!-- NAV BTNS -->
+        <div class="navBtns">
+            <div class="navBtn" id="helpPageContent-btn">
+                <a href="help.html">
+                    <div>
+                        HJÆLP
+                    </div>
+                </a>
+            </div>
+            <div class="navBtn" id="getStartedPageContent-btn">
+                <a href="get-started.html">
+                    <div>
+                        KOM I GANG
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- NAV BTNS END -->
+    </div>
+    <!-- NAV END -->
+    <div id="browserIsSafariAlert" class="browserIsSafariAlert" style="display: none;">
+        Du bruger safari og denne side er ikke tilgængelig når du bruger denne browser. Det er efter at ElevPicker ikke er tilgængelig til Safari. Du skal bruge Chrome, Firefox, Edge eller Opera for at bruge ElevPicker eller denne side.
+    </div>
+    <!-- HELP CONTENT -->
+    <div class="helpContent" id="helpPageContent" style="min-height: 400px;">
+        <p>Her er tomt for nu, desværre.</p>
+        <!-- <span>Din browser</span>
+        <div class="browserDropdownContainer">
+            <div class="browserDropdown" id="userBrowser" onclick="selectBrowser()">
+                <img src="" id="selectedBrowserIcon" height="32" width="auto" style="vertical-align: middle;"> <span id="browserName"></span>
+            </div>
+            <div class="browserDropdownContent" id="browserDropdownContent">
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Chrome">
+                    <img src="./images/Chrome-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Chrome</span>
+                </div>
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Firefox">
+                    <img src="./images/Firefox-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Firefox</span>
+                </div>
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Edge">
+                    <img src="./images/Edge-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Egde</span>
+                </div>
+                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Opera">
+                    <img src="./images/Opera-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Opera</span>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- HELP CONTENT END -->
+    <!-- FOOTER -->
+    <div class="footerContainer">
+        <p>
+            <b>Kontakt:</b> orc-developer@outlook.com
+        </p>
+        <p>
+            <i>Extension af Oliver Risager Christensen</i>
+        </p>
+    </div>
+    <!-- FOOTER END -->
+</body>
+<script src="./js/safariCheck.js"></script>
+<script>
+    if (safariCheck() === true) {
+        document.getElementById('helpPageContent').style.display = 'none';
+    }
+</script>
+<!--<script src="./js/page-viewer-controler.js"></script>-->
+</html>
