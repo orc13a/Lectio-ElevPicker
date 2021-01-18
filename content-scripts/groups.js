@@ -107,54 +107,8 @@ function createGroupsByGroups(groups) {
             
             studentsPulled++;
         }
-        download_csv(allGroups);
-        // while (studentsPulled != eleverArr.length) {
-            
-        //     pulledId = getRandomNr(0, eleverArr.length);
-            
-        //     if (allStudentsPulled == 0) {
-        //         while (allStudentsPulled.includes(pulledId)) {
-        //             studentPulled = getRandomNr(0, eleverArr);
-        //         }
-        //     }
 
-        //     eleverArrMixed.push(eleverArr[pulledId]);
-        //     allStudentsPulled.push(eleverArr[pulledId]);
-
-        //     studentsPulled++;
-        // }
-
-        // while (groupsMade != groups) {
-        //     group = [];
-
-        //     for (let i = student; i < (student + prGroup) && i < eleverArrMixed.length; i++) {
-        //         group.push(eleverArrMixed[i]);
-        //         console.log(i);
-        //     }
-
-        //     allGroups.push(group);
-            
-        //     student = student + groups;
-        //     groupsMade++;
-        // }
-        // console.log(allGroups);
-        // eleverArrMixed[0].children[2].children[0].children[0].innerHTML - Fornavn
-        // eleverArrMixed[0].children[3].children[0].innerHTML - Efternavn
-
-        // while (groupsMade != groups) {
-        //     group = [];
-
-        //     for (let i = student; i < (student + groups) && i < eleverArrMixed.length; i++) {
-        //         group.push(eleverArrMixed[i]);
-        //         console.log(i);
-        //     }
-
-        //     allGroups.push(group);
-            
-        //     student = student + groups;
-        //     groupsMade++;
-        // }
-        // console.log(allGroups);
+        download_txt(allGroups);
     } else { // Hvis der er blevet skrevet elever ind som ikke skal i nogen grupper
         var noInculdeStutentsIdArr = noIncludeInput.value.split(',');
 
@@ -174,9 +128,19 @@ function createGroupsByStudents(students) {
 // Download grupper
 // ----------------------------
 
-function download_csv(data) {
-    var fileName = groupsFileName.value
-    var csv = fileName + '\n\n';
+function download_txt(data) {
+    var fileNameJoin;
+    var fileTitle;
+
+    if (groupsFileName.value.length === 0) {
+        fileTitle = 'Grupper';
+        fileNameJoin = 'Grupper';
+    } else {
+        fileNameJoin = groupsFileName.value.split(' ').join('_');
+        fileTitle = groupsFileName.value;
+    }
+    
+    var csv = fileTitle + '\n\n';
     var gruppeNr = 1;
 
     data.forEach(function(row) {
@@ -188,6 +152,10 @@ function download_csv(data) {
         gruppeNr++;
     });
  
+    csv += '\n\n\n\n';
+    csv += 'Grupper lavet med Lectio ElevPicker,\n';
+    csv += 'Chrome og Firefox extension for Lectio.\n';
+
     //console.log(csv);
     //window.open('data:text/csv;charset=utf-8,' + encodeURI(csv), '_blank');
     var hiddenElement = document.createElement('a');
@@ -195,6 +163,6 @@ function download_csv(data) {
     //hiddenElement.href = 'data:text/csv;charset=UTF-8,' + encodeURI(csv);
     hiddenElement.target = '_blank';
     // hiddenElement.download = fileName + '.csv';
-    hiddenElement.download = fileName + '.txt';
+    hiddenElement.download = fileNameJoin + '.txt';
     hiddenElement.click();
 }
