@@ -95,6 +95,24 @@ groupInfoDiv.setAttribute('id', 'ex_elevPicker_groupInfoDiv');
 groupDiv.appendChild(groupInfoDiv);
 
 // Group amount input div
+var groupFileTitleInputDiv = document.createElement('div');
+groupFileTitleInputDiv.setAttribute('id', 'ex_elevPicker_groupFileTitleInputDiv');
+groupDiv.appendChild(groupFileTitleInputDiv);
+
+// Input for Group amount
+var groupFileTitleInput = document.createElement('input');
+groupFileTitleInput.setAttribute('id', 'ex_elevPicker_groupFileTitleInput');
+groupFileTitleInput.setAttribute('placeholder', 'Dansk grupper');
+groupFileTitleInput.setAttribute('value', '');
+groupFileTitleInputDiv.appendChild(groupFileTitleInput);
+
+// Div for text after input
+var groupFileTitleInputText = document.createElement('div');
+groupFileTitleInputText.innerHTML = 'Navn på filen hvor grupperne bliver gemt';
+groupFileTitleInputText.setAttribute('id', 'ex_elevPicker_groupFileTitleInputText');
+groupFileTitleInputDiv.appendChild(groupFileTitleInputText);
+
+// Group amount input div
 var groupAmountInputDiv = document.createElement('div');
 groupAmountInputDiv.setAttribute('id', 'ex_elevPicker_groupAmountDiv');
 groupDiv.appendChild(groupAmountInputDiv);

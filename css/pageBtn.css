@@ -123,7 +123,7 @@
     margin-bottom: 25px;
 }
 
-#ex_elevPicker_noPickNumbersInputDiv input, #ex_elevPicker_noIncludeGroupInputDiv input, #ex_elevPicker_groupAmountDiv input, #ex_elevPicker_groupsDiv input {
+#ex_elevPicker_noPickNumbersInputDiv input, #ex_elevPicker_noIncludeGroupInputDiv input, #ex_elevPicker_groupAmountDiv input, #ex_elevPicker_groupsDiv input, #ex_elevPicker_groupFileTitleInputDiv input {
     border: 2px solid #F5E762;
     border-radius: 5px;
     background-color: rgba(211, 211, 211, 0.25);
@@ -131,7 +131,7 @@
     font-size: 14px;
 }
 
-#ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_groupAmountInputText, #ex_elevPicker_groupsInputText {
+#ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_groupAmountInputText, #ex_elevPicker_groupsInputText, #ex_elevPicker_groupFileTitleInputText {
     display: inline-block;
     font-size: 14px;
     margin-left: 10px;
