@@ -1,5 +1,193 @@
 #ex_elevPicker_container {
     margin: 10px 0px;
+    padding: 15px 25px 25px 25px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#ex_elevPicker_pageTitle {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#ex_elevPicker_randomBtnDiv {
+    display: inline-block;
+}
+
+#ex_elevPicker_getBtn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 0px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: 185px;
+    font-size: 14px;
+    background-color: #C85B5B;
+    color: white;
+    text-align: center;
+    margin-right: 50px;
+}
+
+#ex_elevPicker_groupBtn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 0px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: 185px;
+    font-size: 14px;
+    background-color: #F5E762;
+    color: black;
+    text-align: center;
+}
+
+#ex_elevPicker_settingsBtn:hover, #ex_elevPicker_getBtn:hover, #ex_elevPicker_groupBtn:hover, #ex_elevPicker_resetBtn:hover, #ex_elevPicker_cancelGroupBtn:hover, #ex_elevPicker_createGroupBtn:hover {
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.05);
+}
+
+#ex_elevPicker_secondRowBtns {
+    margin-top: 25px;
+}
+
+#ex_elevPicker_resetBtn {
+    display: inline-block;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+    padding: 5px 6px 0px 6px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    background-color: rgba(211, 211, 211, 0.25);
+    color: black;
+    text-align: center;
+    position: relative;
+    top: 4.635px;
+}
+
+#ex_elevPicker_resetBtn svg {
+    position: relative;
+    top: 1.5px;
+    transform: rotate(-45deg);
+}
+
+#ex_elevPicker_settingsBtn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 0px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: 185px;
+    font-size: 14px;
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.dis {
+   cursor: not-allowed !important;
+   box-shadow: none !important;
+   filter: opacity(0.5) !important;
+}
+
+#ex_elevPicker_settingsDiv {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+}
+
+#ex_elevPicker_groupInfoDiv {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#ex_elevPicker_groupDiv {
+    margin-top: 25px;
+    padding: 25px 25px 0px 25px;
+    border-radius: 5px;
+    border: 2px solid #F5E762;
+}
+
+#ex_elevPicker_groupDiv > div {
+    margin-bottom: 25px;
+}
+
+#ex_elevPicker_noPickNumbersInputDiv input, #ex_elevPicker_noIncludeGroupInputDiv input, #ex_elevPicker_groupAmountDiv input, #ex_elevPicker_groupsDiv input {
+    border: 2px solid #F5E762;
+    border-radius: 5px;
+    background-color: rgba(211, 211, 211, 0.25);
+    padding: 6px 8px;
+    font-size: 14px;
+}
+
+#ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_groupAmountInputText, #ex_elevPicker_groupsInputText {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#ex_elevPicker_noPickNumbersInputElevPickerSpanHover, #ex_elevPicker_noPickNumbersInputElevPickerSpanHover2, #ex_elevpicker_groupAmountInfo, #ex_elevpicker_groupsInfo {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+#ex_elevPicker_noPickNumbersInputElevPickerSpanHover:hover, #ex_elevPicker_noPickNumbersInputElevPickerSpanHover2:hover, #ex_elevpicker_groupAmountInfo:hover, #ex_elevpicker_groupsInfo:hover {
+    text-decoration: none;
+    cursor: help;
+}
+
+#ex_elevPicker_cancelGroupBtn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 0px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: 185px;
+    font-size: 14px;
+    background-color: lightgray;
+    color: black;
+    text-align: center;
+}
+
+#ex_elevPicker_createGroupBtn {
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    padding: 7px 0px;
+    line-height: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: 185px;
+    font-size: 14px;
+    background-color: #F5E762;
+    color: black;
+    text-align: center;
+    margin-left: 25px;
+}
+
+#ex_elevPicker_pageVersionDiv {
+    margin-top: 25px;
+}
+
+#ex_elevPicker_pageVersion {
+    opacity: 0.5;
+}
+
+/* #ex_elevPicker_container {
+    margin: 10px 0px;
     padding: 25px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
@@ -130,4 +318,4 @@
     opacity: 1;
     margin-top: 100px;
     font-style: normal;
-}
+} */
