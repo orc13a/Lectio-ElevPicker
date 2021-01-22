@@ -4,6 +4,7 @@ let groupsAmountInput = document.getElementById('ex_elevPicker_groupAmountInput'
 let groupsStuAmountInput = document.getElementById('ex_elevPicker_groupsInput');
 let noIncludeInput = document.getElementById('ex_elevPicker_noIncludeGroupInput');
 let groupsFileName = document.getElementById('ex_elevPicker_groupFileTitleInput');
+let matrixGrupperCheck = document.getElementById('ex_elevPicker_matrixGroupCheckbox');
 
 let createBtnStatus = false; // false = disabled
 let notIncludeErr = false;
@@ -205,7 +206,7 @@ function createGroupsByGroups(groups) {
             }
         }
     }
-    download_txt(allGroups);
+    makeMatrixGroups(allGroups);
 }
 
 
@@ -318,8 +319,45 @@ function createGroupsByStudents(students) {
             group = [];
         }
     }
-    console.log(allGroups);
-    //download_txt(allGroups);
+    makeMatrixGroups(allGroups);
+}
+
+// ----------------------------
+// Make matrix groups
+// ----------------------------
+
+function makeMatrixGroups(createGroups) {
+    var allMatrixGroups = [];
+    var matrixGroup = [];
+    var studentsPickedArr = [];
+    var studentsPicked = 0;
+    var studentsIncluded = 0;
+    var pickedStudent;
+    
+    for (let i = 0; i < createGroups.length; i++) {
+        studentsIncluded = studentsIncluded + createGroups[i].length;
+    }
+
+    while (studentsPicked != studentsIncluded) {
+        for (let i = 0; i < createGroups.length; i++) {
+            var student = getRandomNr(0, createGroups[i].length - 1);
+
+            if (studentsPickedArr.length > 0) {
+                while (studentsPickedArr.includes(student) === true) {
+                    student = getRandomNr(0, createGroups[i].length - 1);
+                    if (studentsPickedArr.includes(student) === false) {
+                        break;
+                    }
+                }
+            }
+
+            createGroups[i][student]
+        }        
+
+        studentsPicked++;
+    }
+
+    console.log(studentsIncluded);
 }
 
 // ----------------------------
@@ -329,6 +367,7 @@ function createGroupsByStudents(students) {
 function download_txt(data) {
     var fileNameJoin;
     var fileTitle;
+    var matrixGroups;
 
     if (groupsFileName.value.length === 0) {
         fileTitle = 'Grupper';
@@ -337,7 +376,11 @@ function download_txt(data) {
         fileNameJoin = groupsFileName.value.split(' ').join('_');
         fileTitle = groupsFileName.value;
     }
-    
+
+    if (matrixGrupperCheck.checked === true) {
+        matrixGroups = makeMatrixGroups(data);
+    }
+
     var csv = fileTitle + '\n\n';
     var gruppeNr = 1;
 
@@ -349,7 +392,20 @@ function download_txt(data) {
 
         gruppeNr++;
     });
- 
+    
+    if (matrixGrupperCheck.checked === true) {
+        gruppeNr = 1;
+
+        matrixGroups.forEach(function(row) {
+            csv += "Matix gruppe " + gruppeNr;
+            csv += "\n";
+            csv += row.join(', ');
+            csv += "\n\n";
+    
+            gruppeNr++;
+        });
+    }
+
     csv += '\n\n\n\n';
     csv += 'Grupper lavet med Lectio ElevPicker,\n';
     csv += 'Chrome og Firefox extension for Lectio.\n';

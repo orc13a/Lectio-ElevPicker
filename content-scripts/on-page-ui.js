@@ -172,6 +172,22 @@ noIncludeGroupInputText.innerHTML = 'Elever som ikke skal i nogen gruppe <span i
 noIncludeGroupInputText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputText');
 noIncludeGroupInputDiv.appendChild(noIncludeGroupInputText);
 
+// Div for matrixgrupper
+var matrixGroupDiv = document.createElement('div');
+matrixGroupDiv.setAttribute('id', 'ex_elevPicker_matrixgrupperDiv');
+groupDiv.appendChild(matrixGroupDiv);
+
+var matrixGroupCheckbox = document.createElement('input');
+matrixGroupCheckbox.setAttribute('id', 'ex_elevPicker_matrixGroupCheckbox');
+matrixGroupCheckbox.setAttribute('type', 'checkbox');
+matrixGroupDiv.appendChild(matrixGroupCheckbox);
+
+var matrixGroupCheckboxLabel = document.createElement('label');
+matrixGroupCheckboxLabel.setAttribute('id', 'ex_elevPicker_matrixGroupCheckboxLabel');
+matrixGroupCheckboxLabel.setAttribute('for', 'ex_elevPicker_matrixGroupCheckbox');
+matrixGroupCheckboxLabel.innerHTML = 'Lav matrix grupper | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#matrixgroups">læs mere</a>';
+matrixGroupDiv.appendChild(matrixGroupCheckboxLabel);
+
 // Div for group cancel button
 var cancelGroupBtnDiv = document.createElement('div');
 cancelGroupBtnDiv.setAttribute('id', 'ex_elevPicker_cancelGroupBtnDiv');

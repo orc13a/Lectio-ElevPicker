@@ -132,10 +132,18 @@
     text-align: center;
 }
 
-#ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_groupAmountInputText, #ex_elevPicker_groupsInputText, #ex_elevPicker_groupFileTitleInputText {
+#ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_groupAmountInputText, #ex_elevPicker_groupsInputText, #ex_elevPicker_groupFileTitleInputText, #ex_elevPicker_matrixGroupCheckboxLabel {
     display: inline-block;
     font-size: 14px;
     margin-left: 10px;
+}
+
+#ex_elevPicker_matrixGroupCheckboxLabel {
+    cursor: pointer;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #ex_elevPicker_noPickNumbersInputElevPickerSpanHover, #ex_elevPicker_noPickNumbersInputElevPickerSpanHover2, #ex_elevpicker_groupAmountInfo, #ex_elevpicker_groupsInfo {
