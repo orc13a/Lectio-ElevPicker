@@ -6,6 +6,15 @@ let noIncludeInput = document.getElementById('ex_elevPicker_noIncludeGroupInput'
 let groupsFileName = document.getElementById('ex_elevPicker_groupFileTitleInput');
 
 let createBtnStatus = false; // false = disabled
+let notIncludeErr = false;
+
+groupsFileName.addEventListener('input', function() {
+    if (groupsFileName.value.length > 13) {
+        groupsFileName.setAttribute('size', groupsFileName.value.length);
+    } else {
+        groupsFileName.setAttribute('size', "13");
+    }
+});
 
 groupsAmountInput.addEventListener('input', function () {
     if (groupsAmountInput.value.length > 0 && groupsStuAmountInput.value.length > 0) {
@@ -20,6 +29,12 @@ groupsAmountInput.addEventListener('input', function () {
         createBtn.classList.add('dis');
         createBtn.setAttribute('title', 'Du skal udfulde en af felterne (Læs teksten øverst)');
         createBtnStatus = false;
+    }
+
+    if (groupsAmountInput.value.length > 0) {
+        groupsAmountInput.setAttribute('size', groupsAmountInput.value.length);
+    } else {
+        groupsAmountInput.setAttribute('size', "1");
     }
 });
 
@@ -37,6 +52,12 @@ groupsStuAmountInput.addEventListener('input', function () {
         createBtn.setAttribute('title', 'Du skal udfulde en af felterne (Læs teksten øverst)');
         createBtnStatus = false;
     }
+
+    if (groupsStuAmountInput.value.length > 0) {
+        groupsStuAmountInput.setAttribute('size', groupsStuAmountInput.value.length);
+    } else {
+        groupsStuAmountInput.setAttribute('size', "1");
+    }
 });
 
 createBtn.addEventListener('click', function () {
@@ -46,11 +67,38 @@ createBtn.addEventListener('click', function () {
                 createGroupsByGroups(Number(groupsAmountInput.value));
             }
         }
-        if (Number(groupsAmountInput.value)) {
+        if (Number(groupsStuAmountInput.value)) {
             if (groupsStuAmountInput.value.length > 0) {
                 createGroupsByStudents(Number(groupsStuAmountInput.value));
             }
         }
+    }
+});
+
+noIncludeInput.addEventListener('input', function () {
+    if (noIncludeInput.value.length > 0) {
+        var inputSplited = noIncludeInput.value.split(',');
+        notIncludeErr = false;
+
+        for (let i = 0; i < inputSplited.length; i++) {
+            if (Number(inputSplited[i]) === 0 || !Number(inputSplited[i])) {
+                notIncludeErr = true;
+            }
+        }
+
+        if (notIncludeErr === true) {
+            createBtn.classList.add('dis');
+            createBtn.setAttribute('title', 'Du må kunne have tal og komma som adskilder talene');
+        } else if (notIncludeErr === false && createBtnStatus === true) {
+            createBtn.classList.remove('dis');
+            createBtn.setAttribute('title', '');
+        }
+    }
+
+    if (noIncludeInput.value.length > 4) {
+        noIncludeInput.setAttribute('size', noIncludeInput.value.length);
+    } else {
+        noIncludeInput.setAttribute('size', "4");
     }
 });
 
@@ -64,12 +112,12 @@ function createGroupsByGroups(groups) {
     var allGroups = [];
     
     var allStudentsPulled = [];
-    var eleverArrMixed = [];
+    // var eleverArrMixed = [];
     var studentsPulled = 0;
     var studentPulled;
-    var student = 0;
-    var groupsMade = 0;
-    var prGroup = Math.floor(eleverArr.length / groups);
+    // var student = 0;
+    // var groupsMade = 0;
+    // var prGroup = Math.floor(eleverArr.length / groups);
     var groupNr = 0;
     var group = [];
     
@@ -108,20 +156,170 @@ function createGroupsByGroups(groups) {
             studentsPulled++;
         }
 
-        download_txt(allGroups);
-    } else { // Hvis der er blevet skrevet elever ind som ikke skal i nogen grupper
-        var noInculdeStutentsIdArr = noIncludeInput.value.split(',');
+        //download_txt(allGroups);
 
+    } else { // Hvis der er blevet skrevet elever ind som ikke skal i nogen grupper
+        
+        if (notIncludeErr === false) {
+            var noIncludeStudents = noIncludeInput.value.split(',');
+
+            for (let i = 0; i < noIncludeStudents.length; i++) {
+                noIncludeStudents[i] = Number(noIncludeStudents[i]) - 1;
+            }
+
+            while (studentsPulled != (eleverArr.length - noIncludeStudents.length)) {
+                
+                studentPulled = getRandomNr(0, eleverArr.length - 1);
+                
+                if (allStudentsPulled.length == 0) {
+                    while (noIncludeStudents.includes(studentPulled) === true) {
+                        studentPulled = getRandomNr(0, eleverArr.length  - 1);
+                        if (noIncludeStudents.includes(studentPulled) === false) {
+                            break;
+                        }
+                    }
+                }
+
+                if (allStudentsPulled.length != 0) {
+                    while (allStudentsPulled.includes(studentPulled) === true || noIncludeStudents.includes(studentPulled) === true) {
+                        studentPulled = getRandomNr(0, eleverArr.length  - 1);
+                        if (allStudentsPulled.includes(studentPulled) === false && noIncludeStudents.includes(studentPulled) === false) {
+                            break;
+                        }
+                    }
+                }
+
+                var studentFirstname = eleverArr[studentPulled].children[2].children[0].children[0].innerHTML.split(' ')[0];
+                var studentLastname = eleverArr[studentPulled].children[3].children[0].innerHTML;
+
+                allGroups[groupNr].push(/*eleverArr[studentPulled]*/ studentFirstname + ' ' + studentLastname);
+                allStudentsPulled.push(studentPulled);
+                
+                if (groupNr === groups - 1) {
+                    groupNr = 0;
+                } else {
+                    groupNr++;
+                }
+                
+                studentsPulled++;
+            }
+        }
     }
+    download_txt(allGroups);
 }
 
+
+
 function createGroupsByStudents(students) {
+    var allGroups = [];
+    
+    var allStudentsPulled = [];
+    var studentsPulled = 0;
+    var studentPulled;
+    var groupsMade = allGroups.length;
+    var groupNr = 0;
+    var group = [];
+    
     if (noIncludeInput.value.length === 0) {
         
+        while (studentsPulled != eleverArr.length) {
+            studentPulled = getRandomNr(0, eleverArr.length - 1);
+
+            if (allStudentsPulled.length != 0) {
+                while (allStudentsPulled.includes(studentPulled) === true) {
+                    studentPulled = getRandomNr(0, eleverArr.length  - 1);
+                    if (allStudentsPulled.includes(studentPulled) === false) {
+                        break;
+                    }
+                }
+            }
+
+            var studentFirstname = eleverArr[studentPulled].children[2].children[0].children[0].innerHTML.split(' ')[0];
+            var studentLastname = eleverArr[studentPulled].children[3].children[0].innerHTML;
+
+            //allGroups[groupNr].push(/*eleverArr[studentPulled]*/ studentFirstname + ' ' + studentLastname);
+            group.push(studentFirstname + ' ' + studentLastname);
+            allStudentsPulled.push(studentPulled);
+
+            if (group.length === students) {
+                allGroups.push(group);
+                groupsMade++;
+                group = [];
+            }
+            
+            studentsPulled++;
+        }
+
+        if (group.length < students && group.length > 0) {
+            for (let i = 0; i < group.length; i++) {
+                allGroups[groupNr].push(group[i]);
+                
+                if (groupNr === groupsMade - 1) {
+                    groupNr = 0;
+                } else {
+                    groupNr++;
+                }
+            }
+            group = [];
+        }
     } else { // Hvis der er blevet skrevet elever ind som ikke skal i nogen grupper
-        var stutentsIds = noIncludeInput.value.split(',');
+        var noIncludeStudents = noIncludeInput.value.split(',');
+        var newEleverArrar = eleverArr;
+        for (let i = 0; i < noIncludeStudents.length; i++) {
+            noIncludeStudents[i] = Number(noIncludeStudents[i]) - 1;
+        }
         
+        for (let i = 0; i < newEleverArrar.length; i++) {
+            for (let n = 0; n < noIncludeStudents.length; n++) {
+                if (i === noIncludeStudents[n]) {
+                    newEleverArrar.splice(i, 1);
+                }
+            }
+        }
+
+        while (studentsPulled != newEleverArrar.length) {
+            studentPulled = getRandomNr(0, newEleverArrar.length - 1);
+
+            if (allStudentsPulled.length != 0) {
+                while (allStudentsPulled.includes(studentPulled) === true) {
+                    studentPulled = getRandomNr(0, newEleverArrar.length  - 1);
+                    if (allStudentsPulled.includes(studentPulled) === false) {
+                        break;
+                    }
+                }
+            }
+
+            var studentFirstname = eleverArr[studentPulled].children[2].children[0].children[0].innerHTML.split(' ')[0];
+            var studentLastname = eleverArr[studentPulled].children[3].children[0].innerHTML;
+
+            //allGroups[groupNr].push(/*eleverArr[studentPulled]*/ studentFirstname + ' ' + studentLastname);
+            group.push(studentFirstname + ' ' + studentLastname);
+            allStudentsPulled.push(studentPulled);
+
+            if (group.length === students) {
+                allGroups.push(group);
+                groupsMade++;
+                group = [];
+            }
+            
+            studentsPulled++;
+        }
+
+        if (group.length < students && group.length > 0) {
+            for (let i = 0; i < group.length; i++) {
+                allGroups[groupNr].push(group[i]);
+                
+                if (groupNr === groupsMade - 1) {
+                    groupNr = 0;
+                } else {
+                    groupNr++;
+                }
+            }
+            group = [];
+        }
     }
+    console.log(allGroups);
+    //download_txt(allGroups);
 }
 
 // ----------------------------

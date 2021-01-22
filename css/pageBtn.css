@@ -129,6 +129,7 @@
     background-color: rgba(211, 211, 211, 0.25);
     padding: 6px 8px;
     font-size: 14px;
+    text-align: center;
 }
 
 #ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_groupAmountInputText, #ex_elevPicker_groupsInputText, #ex_elevPicker_groupFileTitleInputText {

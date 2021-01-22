@@ -72,8 +72,9 @@ settingDiv.appendChild(noPickNumbersInputDiv);
 // Input for number not to pick at random
 var noPickNumbersInput = document.createElement('input');
 noPickNumbersInput.setAttribute('id', 'ex_elevPicker_noPickNumbersInput');
-noPickNumbersInput.setAttribute('placeholder', '8,10,20,24...');
+noPickNumbersInput.setAttribute('placeholder', '8,10');
 noPickNumbersInput.setAttribute('value', '');
+noPickNumbersInput.setAttribute('size', '4');
 noPickNumbersInputDiv.appendChild(noPickNumbersInput);
 
 // Div for text after input
@@ -104,11 +105,12 @@ var groupFileTitleInput = document.createElement('input');
 groupFileTitleInput.setAttribute('id', 'ex_elevPicker_groupFileTitleInput');
 groupFileTitleInput.setAttribute('placeholder', 'Dansk grupper');
 groupFileTitleInput.setAttribute('value', '');
+groupFileTitleInput.setAttribute('size', '13');
 groupFileTitleInputDiv.appendChild(groupFileTitleInput);
 
 // Div for text after input
 var groupFileTitleInputText = document.createElement('div');
-groupFileTitleInputText.innerHTML = 'Navn på filen hvor grupperne bliver gemt';
+groupFileTitleInputText.innerHTML = 'Hvad skal grupperne bruges til';
 groupFileTitleInputText.setAttribute('id', 'ex_elevPicker_groupFileTitleInputText');
 groupFileTitleInputDiv.appendChild(groupFileTitleInputText);
 
@@ -122,6 +124,7 @@ var groupAmountInput = document.createElement('input');
 groupAmountInput.setAttribute('id', 'ex_elevPicker_groupAmountInput');
 groupAmountInput.setAttribute('placeholder', '6');
 groupAmountInput.setAttribute('value', '');
+groupAmountInput.setAttribute('size', '1');
 groupAmountInputDiv.appendChild(groupAmountInput);
 
 // Div for text after input
@@ -140,6 +143,7 @@ var groupsInput = document.createElement('input');
 groupsInput.setAttribute('id', 'ex_elevPicker_groupsInput');
 groupsInput.setAttribute('placeholder', '3');
 groupsInput.setAttribute('value', '');
+groupsInput.setAttribute('size', '1');
 groupsInputDiv.appendChild(groupsInput);
 
 // Div for text after input
@@ -156,13 +160,15 @@ groupDiv.appendChild(noIncludeGroupInputDiv);
 // Input for not includeing to group
 var noIncludeGroupInput = document.createElement('input');
 noIncludeGroupInput.setAttribute('id', 'ex_elevPicker_noIncludeGroupInput');
-noIncludeGroupInput.setAttribute('placeholder', '8,10,20,24...');
+noIncludeGroupInput.setAttribute('placeholder', '8,10');
 noIncludeGroupInput.setAttribute('value', '');
+noIncludeGroupInput.setAttribute('size', '4');
+noIncludeGroupInput.setAttribute('title', 'tallene skal deles med et komma')
 noIncludeGroupInputDiv.appendChild(noIncludeGroupInput);
 
 // Div for text after input
 var noIncludeGroupInputText = document.createElement('div');
-noIncludeGroupInputText.innerHTML = 'Elever som ikke skal i nogen gruppe <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover2">(ElevPicker nummer)</span> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
+noIncludeGroupInputText.innerHTML = 'Elever som ikke skal i nogen gruppe <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover2">(ElevPicker nummer)</span> | <i>tallene skal deles med et komma</i> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
 noIncludeGroupInputText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputText');
 noIncludeGroupInputDiv.appendChild(noIncludeGroupInputText);
 

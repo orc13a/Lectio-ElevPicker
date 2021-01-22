@@ -19,7 +19,7 @@ settingsBtnListener.addEventListener('click', function () {
 
 // ----------------------------
 // ElevPicker ID table header
-// ----------------------------
+
 
 let elevPickerIdSettingsText = document.getElementById('ex_elevPicker_noPickNumbersInputElevPickerSpanHover');
 let elevPickerIdSettingsText2 = document.getElementById('ex_elevPicker_noPickNumbersInputElevPickerSpanHover2');
@@ -64,4 +64,18 @@ groupsInfoHelp.addEventListener('mouseover', function () {
 
 groupsInfoHelp.addEventListener('mouseout', function () {
     groupsInputHelp.style.borderColor = '';
+});
+
+
+
+
+
+let noPickNumbersRandomInput = document.getElementById('ex_elevPicker_noPickNumbersInput');
+
+noPickNumbersRandomInput.addEventListener('input', function() {
+    if (noPickNumbersRandomInput.value.length > 4) {
+        noPickNumbersRandomInput.setAttribute('size', noPickNumbersRandomInput.value.length);
+    } else {
+        noPickNumbersRandomInput.setAttribute('size', "4");
+    }
 });
