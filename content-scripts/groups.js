@@ -329,35 +329,44 @@ function createGroupsByStudents(students) {
 function makeMatrixGroups(createGroups) {
     var allMatrixGroups = [];
     var matrixGroup = [];
+    var mGroupNr = 0;
     var studentsPickedArr = [];
     var studentsPicked = 0;
     var studentsIncluded = 0;
     var pickedStudent;
-    
+    var antalGrupper = createGroups.length;
+    var createGroupsNr = 0;
+    var loopCheck = 0;
+
     for (let i = 0; i < createGroups.length; i++) {
         studentsIncluded = studentsIncluded + createGroups[i].length;
     }
 
-    while (studentsPicked != studentsIncluded) {
-        for (let i = 0; i < createGroups.length; i++) {
-            var student = getRandomNr(0, createGroups[i].length - 1);
+    for (let i = 0; i < antalGrupper; i++) {
+        allMatrixGroups.push(matrixGroup);
+    }
 
-            if (studentsPickedArr.length > 0) {
-                while (studentsPickedArr.includes(student) === true) {
-                    student = getRandomNr(0, createGroups[i].length - 1);
-                    if (studentsPickedArr.includes(student) === false) {
-                        break;
-                    }
+    for (let g = 0; g < createGroups.length; g++) {
+        for (let i = 0; i < createGroups[g].length; i++) {
+            studentPulled = getRandomNr(0, createGroups[g].length - 1);
+
+            if (studentsPickedArr.includes(studentPulled) === true) {
+                studentPulled = getRandomNr(0, createGroups[g].length - 1);
+                if (studentsPickedArr.includes(studentPulled) === false) {
+                    break;
+                }
+                if (loopCheck === 2000) {
+                    console.error('loop error');
+                    break;
                 }
             }
 
-            createGroups[i][student]
-        }        
-
-        studentsPicked++;
+            console.log(createGroups[g][studentPulled]);
+        }
+        studentsPickedArr = [];
     }
 
-    console.log(studentsIncluded);
+    console.log(createGroups);
 }
 
 // ----------------------------
