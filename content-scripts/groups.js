@@ -206,7 +206,7 @@ function createGroupsByGroups(groups) {
             }
         }
     }
-    makeMatrixGroups(allGroups);
+    download_txt(allGroups);
 }
 
 
@@ -319,7 +319,7 @@ function createGroupsByStudents(students) {
             group = [];
         }
     }
-    makeMatrixGroups(allGroups);
+    download_txt(allGroups);
 }
 
 // ----------------------------
@@ -329,44 +329,63 @@ function createGroupsByStudents(students) {
 function makeMatrixGroups(createGroups) {
     var allMatrixGroups = [];
     var matrixGroup = [];
-    var mGroupNr = 0;
     var studentsPickedArr = [];
     var studentsPicked = 0;
     var studentsIncluded = 0;
-    var pickedStudent;
     var antalGrupper = createGroups.length;
-    var createGroupsNr = 0;
     var loopCheck = 0;
+    var mGroup = 0;
 
     for (let i = 0; i < createGroups.length; i++) {
         studentsIncluded = studentsIncluded + createGroups[i].length;
     }
 
     for (let i = 0; i < antalGrupper; i++) {
+        matrixGroup = [];
         allMatrixGroups.push(matrixGroup);
+
+        matrixGroup = [];
+        studentsPickedArr.push(matrixGroup);
     }
 
     for (let g = 0; g < createGroups.length; g++) {
+        
         for (let i = 0; i < createGroups[g].length; i++) {
-            studentPulled = getRandomNr(0, createGroups[g].length - 1);
+            loopCheck = 0;
 
-            if (studentsPickedArr.includes(studentPulled) === true) {
+            if (studentsPicked != studentsIncluded) {
                 studentPulled = getRandomNr(0, createGroups[g].length - 1);
-                if (studentsPickedArr.includes(studentPulled) === false) {
-                    break;
+                
+                if (studentsPickedArr[g].length > 0) {
+                    while (studentsPickedArr[g].includes(studentPulled) === true) {
+                        
+                        studentPulled = getRandomNr(0, createGroups[g].length - 1);
+                        
+                        if (studentsPickedArr[g].includes(studentPulled) === false) {
+                            break;
+                        }
+
+                        if (loopCheck === 5000) {
+                            console.error('loop crash!');
+                            break;
+                        }
+                        loopCheck++;
+                    }
                 }
-                if (loopCheck === 2000) {
-                    console.error('loop error');
-                    break;
+                
+                allMatrixGroups[mGroup].push(createGroups[g][studentPulled]);
+                studentsPickedArr[g].push(studentPulled);
+
+                if (mGroup === antalGrupper - 1) {
+                    mGroup = 0;
+                } else {
+                    mGroup++;
                 }
             }
-
-            console.log(createGroups[g][studentPulled]);
+            studentsPicked++;
         }
-        studentsPickedArr = [];
     }
-
-    console.log(createGroups);
+    return allMatrixGroups;
 }
 
 // ----------------------------
@@ -376,7 +395,6 @@ function makeMatrixGroups(createGroups) {
 function download_txt(data) {
     var fileNameJoin;
     var fileTitle;
-    var matrixGroups;
 
     if (groupsFileName.value.length === 0) {
         fileTitle = 'Grupper';
@@ -386,27 +404,26 @@ function download_txt(data) {
         fileTitle = groupsFileName.value;
     }
 
-    if (matrixGrupperCheck.checked === true) {
-        matrixGroups = makeMatrixGroups(data);
-    }
-
     var csv = fileTitle + '\n\n';
     var gruppeNr = 1;
 
     data.forEach(function(row) {
-        csv += "Gruppe " + gruppeNr;
+        csv += " - Gruppe " + gruppeNr + " - ";
         csv += "\n";
         csv += row.join(', ');
         csv += "\n\n";
 
         gruppeNr++;
     });
-    
+
     if (matrixGrupperCheck.checked === true) {
+        var matrixGroups = makeMatrixGroups(data);
+        
         gruppeNr = 1;
+        csv += '\n\n';
 
         matrixGroups.forEach(function(row) {
-            csv += "Matix gruppe " + gruppeNr;
+            csv += " - Matix gruppe " + gruppeNr + " - ";
             csv += "\n";
             csv += row.join(', ');
             csv += "\n\n";
