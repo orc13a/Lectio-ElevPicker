@@ -19,7 +19,7 @@ settingsBtnListener.addEventListener('click', function () {
 
 // ----------------------------
 // ElevPicker ID table header
-
+// ----------------------------
 
 let elevPickerIdSettingsText = document.getElementById('ex_elevPicker_noPickNumbersInputElevPickerSpanHover');
 let elevPickerIdSettingsText2 = document.getElementById('ex_elevPicker_noPickNumbersInputElevPickerSpanHover2');
@@ -77,5 +77,29 @@ noPickNumbersRandomInput.addEventListener('input', function() {
         noPickNumbersRandomInput.setAttribute('size', noPickNumbersRandomInput.value.length);
     } else {
         noPickNumbersRandomInput.setAttribute('size', "4");
+    }
+});
+
+
+// ----------------------------
+// Grupper buttons
+// ----------------------------
+
+var navGroupBtn = document.getElementById('ex_elevPicker_groupBtn');
+var groupCancel = document.getElementById('ex_elevPicker_cancelGroupBtn');
+var createGroupsBtn = document.getElementById('ex_elevPicker_createGroupBtn');
+var groupContentDiv = document.getElementById('ex_elevPicker_groupDiv');
+
+navGroupBtn.addEventListener('click', function() {
+    if (groupContentDiv.style.display === 'none') {
+        groupContentDiv.style.display = 'block';
+    } else {
+        groupContentDiv.style.display = 'none';
+    }
+});
+
+groupCancel.addEventListener('click', function() {
+    if (groupContentDiv.style.display === 'block') {
+        groupContentDiv.style.display = 'none';
     }
 });

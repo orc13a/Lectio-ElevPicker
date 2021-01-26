@@ -86,7 +86,7 @@ noPickNumbersInputDiv.appendChild(noPickNumbersInputText);
 // Make group div
 var groupDiv = document.createElement('div');
 groupDiv.setAttribute('id', 'ex_elevPicker_groupDiv');
-groupDiv.setAttribute('style', 'display: block;');
+groupDiv.setAttribute('style', 'display: none;');
 pageBtnContainer.appendChild(groupDiv);
 
 // Make group div info text div
