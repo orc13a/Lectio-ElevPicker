@@ -24,7 +24,6 @@ for (let i = 1; i < eleverArr.length; i++) {
     eleverArr[i].appendChild(td);
 }
 
-
 var randomBtnListener = document.getElementById('ex_elevPicker_getBtn');
 
 function getRandomNr(min, max) {
@@ -45,6 +44,7 @@ function showWinner(exStudentId) {
     }
 }
 
+let sessionPicked = [];
 
 randomBtnListener.addEventListener('click', function () {
     var resetBtn2 = document.getElementById('ex_elevPicker_resetBtn');
@@ -53,28 +53,57 @@ randomBtnListener.addEventListener('click', function () {
     if (resetBtn2.classList.contains('dis') === true || randomBtnListener.innerHTML === 'Vælg tilfældig elev igen') {
 
         var max = eleverArr.length - 1;
-        var min = 1;
-        var randomNr = getRandomNr(min, max);
-        
+        var min = 0;
+        var randomNr;
+
         var settingInputNoPickNumber = document.getElementById('ex_elevPicker_noPickNumbersInput').value;
+
         if (settingInputNoPickNumber != '') {
 
             var settingInputNoPickNumberArr = settingInputNoPickNumber.split(',');
+
+            for (let i = 0; i < settingInputNoPickNumberArr.length; i++) {
+                settingInputNoPickNumberArr[i] = Number(settingInputNoPickNumberArr[i] - 1);
+            }
             
-            if (settingInputNoPickNumberArr.includes(randomNr.toString()) === true) {
-                for (let x = 0; x < settingInputNoPickNumberArr.length; x++) {
-                    var newRandom = getRandomNr(min,max);
-                    if (settingInputNoPickNumberArr.includes(newRandom.toString()) === false) {
+            randomNr = getRandomNr(min, max);
+
+            if (sessionPicked.length == (max - settingInputNoPickNumberArr.length)) {
+                sessionPicked = [];
+            }
+
+            if (sessionPicked.length > 0) {
+               if (settingInputNoPickNumberArr.length != 0) {
+                   while (sessionPicked.includes(randomNr) == true || settingInputNoPickNumberArr.includes(randomNr) == true) {
+                        randomNr = getRandomNr(min, max);
+                        if (sessionPicked.includes(randomNr) == false && settingInputNoPickNumberArr.includes(randomNr) == false) {
+                            break;
+                        }
+                   }
+               }
+            }
+
+            showWinner(randomNr);
+            sessionPicked.push(randomNr);
+
+        } else {
+            randomNr = getRandomNr(min, max);
+
+            if (sessionPicked.length == max) {
+                sessionPicked = [];
+            }
+
+            if (sessionPicked.length > 0 && sessionPicked.length != max) {
+                while (sessionPicked.includes(randomNr) === true) {
+                    randomNr = getRandomNr(min, max);
+                    if (sessionPicked.includes(randomNr) === false) {
                         break;
                     }
                 }
-                showWinner(newRandom);
-            } else {
-                showWinner(randomNr);
             }
 
-        } else {
             showWinner(randomNr);
+            sessionPicked.push(randomNr);
         }
     }
 });
