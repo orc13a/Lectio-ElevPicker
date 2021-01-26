@@ -109,7 +109,7 @@ randomBtnListener.addEventListener('click', function () {
 });
 
 // ----------------------------
-// Show random reset
+// Show random reset.
 // ----------------------------
 
 var resetBtnX = document.getElementById('ex_elevPicker_resetBtn');
