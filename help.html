@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <!-- NAV -->
@@ -47,29 +48,102 @@
     </div>
     <!-- HELP CONTENT -->
     <div class="helpContent" id="helpPageContent" style="min-height: 400px;">
-        <p>Her er tomt for nu, desværre.</p>
-        <!-- <span>Din browser</span>
-        <div class="browserDropdownContainer">
-            <div class="browserDropdown" id="userBrowser" onclick="selectBrowser()">
-                <img src="" id="selectedBrowserIcon" height="32" width="auto" style="vertical-align: middle;"> <span id="browserName"></span>
-            </div>
-            <div class="browserDropdownContent" id="browserDropdownContent">
-                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Chrome">
-                    <img src="./images/Chrome-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Chrome</span>
-                </div>
-                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Firefox">
-                    <img src="./images/Firefox-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Firefox</span>
-                </div>
-                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Edge">
-                    <img src="./images/Edge-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Egde</span>
-                </div>
-                <div class="browserDropdownContentBtn" id="userSelectedBrowser_Opera">
-                    <img src="./images/Opera-icon.png" height="32" width="auto" style="vertical-align: middle;"> <span>Opera</span>
-                </div>
-            </div>
-        </div> -->
+        <h1>
+            Indhold
+        </h1>
+        <p>
+            <ul class="indholdsfortegnelse">
+                <li>
+                    <a href="#howDoesItWork">
+                        Hvordan virker det?
+                    </a>
+                </li>
+                <li>
+                    <a href="#notPullStudent">
+                        Træk ikke elever funktionen
+                    </a>
+                </li>
+                <li>
+                    <a href="#groupInputs">
+                        Hvordan laver jeg grupper?
+                    </a>
+                </li>
+                <li>
+                    <a href="#matrixgroups">
+                        Hvordan laver ElevPicker matrix grupper?
+                    </a>
+                </li>
+            </ul>
+        </p>
+        <h2 id="howDoesItWork">
+            Hvordan virker det?
+        </h2>
+        <p>
+            Med ElevPicker kan du udvælge en tilfældig elev ved at klikke på den røde knap som hedder <code>Vælg en tilfældig elev</code>.<br>
+            Samme elev kan ikke blive trukket igen før alle elever er trykket eller du genindlæser siden.
+            <br>
+            <br>
+            For at vise alle eleverne igen, men ikke nulstille hvilke elever der er blivet trukket.<br>
+            Så skal du bruge knappen<code><svg class="reloadIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/><path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/></svg></code>.
+            <br>
+            <br>
+            Du har også mulighed for at lave grupper, til det skal du klikke på den gule knap <code>Lav grupper</code>.<br>
+            Ud fra grupperne har du mulighed for at danne matrix grupper ud fra grupperne. Du skal bare tjekke checkboxen af.<br>
+            <a href="#groupInputs">Du kan læser mere om gruppe funktionen her</a>
+        </p>
+        <h2 id="notPullStudent">
+            Træk ikke elever funktionen
+        </h2>
+        <p>
+            Hvis du har nogen elever som ikke skal trækkes eller i nogen gruppe.<br>
+            Så skal du skrive deres ElevPicker nummer, hvis du holder musen over <code>(ElevPicker nummer)</code> så kan du se hvor du kan finde ElevPicker nummeret.<br>
+            <br>
+            Når du skal skrive de elever som du ikke vile trække eller have en nogen gruppe. Så skal du skrive elevens ElevPicker nummer i input feltet, og hvis du vil skrive flere elever. Så skal du dele talene med et komma. Det ville så sådan ud er: <code>10,6,12,22</code><br>
+            <br>
+            ElevPicker nummerne er i deres egen kolonne i tabellen med eleverne.
+            <br>
+            <img width="auto" height="250" class="helpImg" src="./images/elevpicker_nummer.png">
+        </p>
+        <h2 id="groupInputs">
+            Hvordan laver jeg grupper?
+        </h2>
+        <p>
+            For at lave grupper skal du først klikke på den gule knap <code>Lav grupper</code>. Derefter vil der komme en kasse frem.<br>
+            <br>
+            Det første felt skriver du hvad grupperne er til, altså om det er matematik grupper eller engelsk grupper osv.<br>
+            Dette bliver også navet på filen som grupperne bliver gemt i.<br>
+            <br>
+            Du kan enten lave grupper ved at sige hvor mange grupper du vil have, eller hvor mange elever der skal være pr. gruppe.<br>
+            ElevPicker vil selv regne ud hvis det ikke går op og tilføje elever til grupper som er overskydene.<br>
+            <li>
+                Hvis du vil lave grupper ud fra et antal grupper,<br>
+                så skal du skrive det antal grupper du vil have i input feltet som er til venstre for <code>Antal grupper</code>.
+            </li>
+            <li>
+                Hvis du vil lave grupper ud fra antal elever pr. gruppe,<br>
+                så skal du skrive det antal elever der skal være pr. gruppe i input feltet til venstre for <code>Antal elever pr. gruppe</code>.
+            </li>
+            Hvis der er nogen elever som ikke skal med i nogen gruppe så skal du skrive dem i input feltet til venstre for <code>Elever som ikke skal i nogen gruppe (ElevPicker nummer)</code>. <a href="#notPullStudent">Læs mere om hvordan man skriver elever i dette felt</a><br>
+            <br>
+            Til sidst har du muligheden for at få lavet matrix grupper ud fra de grupper som er blevet lavet.<br>
+            Du skal bare tjekke kassen af så der er et flueben inden i. Lige som denne: <input style="cursor: pointer;" type="checkbox">.<br>
+            <br>
+            Når du er indtastet det som du skal så klikker du på den <code>gul</code> knap ved siden af <code>Anuller</code> som også hedder <code>Lav grupper</code>.<br>
+            Når du klikker kommer der et vindue op, det er fordi du skal downloade grupperne. Grupperne bliver gemt i en tekst fil <code>.txt</code>, det er så du kan lave flere versioner grupperne og nemt kopiere dem ind i et word dokument eller lignende.
+        </p>
+        <h2 id="matrixgroups">
+            Hvordan laver ElevPicker matrix grupper?
+        </h2>
+        <p>
+
+        </p>
     </div>
     <!-- HELP CONTENT END -->
+    <div title="Tilbage til toppen" id="toTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+        </svg>
+    </div>
     <!-- FOOTER -->
     <div class="footerContainer">
         <p>
@@ -86,6 +160,19 @@
     if (safariCheck() === true) {
         document.getElementById('helpPageContent').style.display = 'none';
     }
+
+    let toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', function() {
+        if (this.scrollY > 400) {
+            toTopBtn.style.display = 'block';
+        } else {
+            toTopBtn.style.display = 'none';
+        }
+    });
+
+    $("#toTop").click(function () {
+        $("html, body").animate({scrollTop: 0}, 800);
+    });
 </script>
 <!--<script src="./js/page-viewer-controler.js"></script>-->
 </html>

@@ -4,6 +4,10 @@ body {
     margin: 0px;
 }
 
+h2 {
+    margin-top: 75px;
+}
+
 .nav {
     margin-bottom: 50px;
     padding: 15px;
@@ -55,6 +59,27 @@ body {
     line-height: 1.5;
 }
 
+#toTop {
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0px 25px 25px 0px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: rgba(246, 231, 98);
+    border-radius: 100%;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.15);
+    line-height: 40px;
+}
+
+#toTop svg {
+    position: relative;
+    top: 2px;
+}
+
 .downloadBtn {
     border: 2px solid white;
     border-radius: 10px;
@@ -81,8 +106,17 @@ body {
 
 .pc, .helpContent, .getStartedContent {
     font-size: 17px;
-    line-height: 1.5;
+    line-height: 2;
     margin: 15px;
+}
+
+.indholdsfortegnelse a {
+    color: black;
+    text-decoration: underline;
+}
+
+.indholdsfortegnelse a:hover {
+    text-decoration: none;
 }
 
 .helpContent {
@@ -223,4 +257,16 @@ li {
     padding: 15px;
     margin-top: 150px;
     box-shadow: 0px -6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.reloadIcon {
+    position: relative;
+    top: 6px;
+    transform: rotate(-45deg);
+}
+
+.helpImg {
+    border-radius: 10px;
+    border: 2px solid lightgray;
+    margin: 10px 0px;
 }
