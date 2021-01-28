@@ -1,0 +1,149 @@
+.elevpickerLectioNavBtn {
+    overflow: hidden;
+    /*position: relative;*/
+    /* margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    height: 70px;
+    background: lightblue;
+    text-align: center; */
+}
+.ex_has-tooltip {
+    /*position: relative;*/
+    display: inline;
+}
+.ex_tooltip-wrapper {
+    position: absolute;
+    visibility: hidden;
+    width: 10px;
+}
+.ex_has-tooltip:hover .ex_tooltip-wrapper {
+    visibility: visible;
+    opacity: 1;
+    /*top: 30px;*/
+    /*left: 50%;*/
+    /*margin-left: -76px;*/
+    /* z-index: 999; defined above with value of 5 */
+}
+
+.ex_tooltip {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 0.6px;
+}
+
+.ex_tooltip {
+    display: block;
+    position: relative;
+    top: 1.87em;
+    right: 1380%;
+    width: 205px;
+    z-index: 999;
+    /* height: 96px; */
+    /*margin-left: -76px;*/
+    color: #FFFFFF;
+    background: #333333;
+    line-height: 16px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+}
+.ex_tooltip:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #000000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}
+
+
+#ex_tooltip-wrapper_hint {
+    position: absolute;
+    visibility: hidden;
+    width: 10px;
+}
+
+#ex_tooltip_hint {
+    display: block;
+    position: relative;
+    top: 2.5em;
+    right: 1048%;
+    width: 140px;
+    z-index: 999;
+    color: #FFFFFF;
+    background: #333333;
+    line-height: 16px;
+    text-align: left;
+    border-radius: 8px;
+    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    cursor: default;
+}
+
+#ex_tooltip_hint {
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#ex_tooltip_hint button {
+    cursor: pointer;
+}
+
+#ex_tooltip_hint span {
+    font-size: 15px;
+}
+
+#ex_hint_info_btn {
+    margin: 15px 0px 10px 0px;
+    padding: 0px;
+}
+
+#ex_hint_info_btn {
+    border: none;
+    background: none;
+    color: white;
+    text-decoration: underline;
+}
+
+#ex_hint_ok {
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: 13px;
+    line-height: 20px;
+    border-radius: 5px;
+    border: none;
+}
+
+#ex_hint_ok:hover {
+    background-color: lightgray;
+}
+
+#ex_hint_ok svg {
+    vertical-align: middle;
+    /* position: relative;
+    bottom: 1px; */
+}
+
+#ex_hint_info_btn:hover {
+    text-decoration: none;
+}
+
+#ex_tooltip_hint:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid #000000;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+}

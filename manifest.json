@@ -17,6 +17,17 @@
             "css": [
                 "css/pageBtn.css"
             ]
+        },
+        {
+            "matches": [
+                "https://www.lectio.dk/*"
+            ],
+            "js": [
+                "content-scripts/lectioNav.js"
+            ],
+            "css": [
+                "css/lectioNav.css"
+            ]
         }
     ],
     "background": {
