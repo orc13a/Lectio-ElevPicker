@@ -45,7 +45,7 @@
     text-align: center;
 }
 
-#ex_elevPicker_settingsBtn:hover, #ex_elevPicker_getBtn:hover, #ex_elevPicker_groupBtn:hover, #ex_elevPicker_resetBtn:hover, #ex_elevPicker_cancelGroupBtn:hover, #ex_elevPicker_createGroupBtn:hover {
+#ex_elevPicker_settingsBtn:hover, #ex_elevPicker_getBtn:hover, #ex_elevPicker_groupBtn:hover, #ex_elevPicker_resetBtn:hover, #ex_elevPicker_cancelGroupBtn:hover, #ex_elevPicker_createGroupBtn:hover, #ex_elevPicker_resetBtnHistoryStudentPulled:hover {
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -57,7 +57,7 @@
     margin-top: 25px;
 }
 
-#ex_elevPicker_resetBtn {
+#ex_elevPicker_resetBtn, #ex_elevPicker_resetBtnHistoryStudentPulled {
     display: inline-block;
     border-radius: 5px;
     border: 2px solid lightgray;
@@ -72,10 +72,27 @@
     top: 4.635px;
 }
 
-#ex_elevPicker_resetBtn svg {
+#ex_elevPicker_resetBtn svg, #ex_elevPicker_resetBtnHistoryStudentPulled svg {
     position: relative;
     top: 1.5px;
     transform: rotate(-45deg);
+}
+
+#ex_elevPicker_resetBtnHistoryStudentPulled svg {
+    vertical-align: middle;
+    position: relative;
+    top: -2.75px;
+}
+
+#ex_elevPicker_resetBtnHistoryStudentPulled span {
+    position: relative;
+    bottom: 2px;
+}
+
+#ex_elevPicker_resetPickedStudentsDivInfoText {
+    margin: 10px 0px;
+    font-size: 13px;
+    color: #ff0000;
 }
 
 #ex_elevPicker_settingsBtn {

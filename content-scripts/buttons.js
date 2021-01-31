@@ -2,16 +2,18 @@
 // Settings Btn and container 
 // ----------------------------
 var settingsBtnListener = document.getElementById('ex_elevPicker_settingsBtn');
-
+let settingsAlertIconSpan = document.getElementById('ex_elevpicker_student_picked_info_settingBtn'); 
 var settingsContainerListener = document.getElementById('ex_elevPicker_settingsDiv');
 
 settingsBtnListener.addEventListener('click', function () {
-    if (settingsBtnListener.innerHTML === 'Indstillinger') {
+    if (settingsBtnListener.children[0].innerHTML === 'Indstillinger') {
         settingsContainerListener.style.display = 'block';
-        settingsBtnListener.innerHTML = 'Luk indstillinger';
-    } else if (settingsBtnListener.innerHTML === 'Luk indstillinger') {
+        settingsBtnListener.children[0].innerHTML = 'Luk indstillinger';
+        settingsAlertIconSpan.style.left = '32px';
+    } else if (settingsBtnListener.children[0].innerHTML === 'Luk indstillinger') {
         settingsContainerListener.style.display = 'none';
-        settingsBtnListener.innerHTML = 'Indstillinger';
+        settingsBtnListener.children[0].innerHTML = 'Indstillinger';
+        settingsAlertIconSpan.style.left = '48px';
     } else {
          alert('- Lectio ElevPicker -\n\nIndstillinger fejl\n\n#1');
      }
@@ -102,4 +104,10 @@ groupCancel.addEventListener('click', function() {
     if (groupContentDiv.style.display === 'block') {
         groupContentDiv.style.display = 'none';
     }
+});
+
+var historyResetBtn = document.getElementById('ex_elevPicker_resetBtnHistoryStudentPulled');
+
+historyResetBtn.addEventListener('click', function() {
+    resetClassHistoryStudentsPicked(); // random.js
 });

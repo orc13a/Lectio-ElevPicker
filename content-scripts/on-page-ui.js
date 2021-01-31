@@ -54,7 +54,7 @@ secondRowBtnsDiv.appendChild(resetBtn);
 
 // The settings button
 var settingsBtn = document.createElement('div');
-settingsBtn.innerHTML = '<span id="ex_elevpicker_settings_btn_text">Indstillinger</span><span title="Der er nogen ændringer i indstillninger" id="ex_elevpicker_student_picked_info_settingBtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></span>';
+settingsBtn.innerHTML = '<span id="ex_elevpicker_settings_btn_text">Indstillinger</span><span style="visibility: hidden;" title="Der er nogen ændringer i indstillninger" id="ex_elevpicker_student_picked_info_settingBtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></span>';
 settingsBtn.setAttribute('id', 'ex_elevPicker_settingsBtn');
 secondRowBtnsDiv.appendChild(settingsBtn);
 
@@ -82,6 +82,28 @@ var noPickNumbersInputText = document.createElement('div');
 noPickNumbersInputText.innerHTML = 'Elever som ikke skal trækkes <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover">(ElevPicker nummer)</span><br><i>tallene skal deles med et komma</i> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
 noPickNumbersInputText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputText');
 noPickNumbersInputDiv.appendChild(noPickNumbersInputText);
+
+// Reset history picked students Div
+var resetHistoryStudentsInfoText = document.createElement('div');
+resetHistoryStudentsInfoText.innerHTML = 'Dette er elever som er blevet trukket på et andet tidspunkt. Fra sidste gang der bliv trukket eller andet.<br>Du kan nulstilde og dermed gøre sådan at alle elever kan trækkes igen.';
+resetHistoryStudentsInfoText.setAttribute('id', 'ex_elevPicker_resetPickedStudentsDivInfoText');
+resetHistoryStudentsInfoText.setAttribute('style', 'display: none;');
+noPickNumbersInputDiv.appendChild(resetHistoryStudentsInfoText);
+
+// Reset history picked students Div
+var resetHistoryStudents = document.createElement('div');
+resetHistoryStudents.setAttribute('id', 'ex_elevPicker_resetPickedStudentsDiv');
+resetHistoryStudents.setAttribute('style', 'display: none;');
+noPickNumbersInputDiv.appendChild(resetHistoryStudents);
+
+// The reset button
+var resetBtnHistoryStudent = document.createElement('div');
+resetBtnHistoryStudent.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/><path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/></svg>&nbsp&nbsp<span>Nulstil alle allerede trykket elever</span>';
+resetBtnHistoryStudent.setAttribute('style', 'display:inline-block;');
+resetBtnHistoryStudent.setAttribute('title', 'Nulstil alle valgte elever');
+// resetBtn.setAttribute('class', 'dis');
+resetBtnHistoryStudent.setAttribute('id', 'ex_elevPicker_resetBtnHistoryStudentPulled');
+resetHistoryStudents.appendChild(resetBtnHistoryStudent);
 
 // Make group div
 var groupDiv = document.createElement('div');
@@ -272,12 +294,14 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
     for (var key in changes) {
         var storageChange = changes[key];
         
-        if(storageChange.newValue === true) {
-            showElevPicker();
-        } else if (storageChange.newValue === false) {
-            hideElevPicker();
-        } else {
-            alert(' - Lectio ElevPicker - \n\n Der er sket en fejl og sætter "vis ElevPicker" til deaktiveret.\n\n #1-2');
+        if (key === 'showElevPickerSwitchStorage') {
+            if(storageChange.newValue === true) {
+                showElevPicker();
+            } else if (storageChange.newValue === false) {
+                hideElevPicker();
+            } else {
+                alert(' - Lectio ElevPicker - \n\n Der er sket en fejl og sætter "vis ElevPicker" til deaktiveret.\n\n #1-2');
+            }
         }
     }
 });
