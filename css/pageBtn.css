@@ -105,6 +105,7 @@
     padding: 25px;
     border-radius: 5px;
     border: 2px solid lightgray;
+    width: 93%;
 }
 
 #ex_elevPicker_groupInfoDiv {
@@ -117,7 +118,7 @@
     padding: 25px 25px 0px 25px;
     border-radius: 5px;
     border: 2px solid #F5E762;
-    width: 650px;
+    width: 93%;
 }
 
 #ex_elevPicker_groupDiv > div {
@@ -137,6 +138,28 @@
     display: inline-block;
     font-size: 14px;
     margin-left: 10px;
+}
+
+#ex_elevPicker_noPickNumbersInputText, #ex_elevPicker_noPickNumbersInputText {
+    vertical-align: middle;
+}
+
+#ex_elevpicker_settings_btn_text {
+    position: relative;
+    left: 10px;
+}
+
+#ex_elevpicker_student_picked_info_settingBtn {
+    position: relative;
+    z-index: 2;
+    bottom: 12px;
+    left: 48px;
+    /* width: 58px;
+    text-align: right; */
+}
+
+#ex_elevpicker_student_picked_info_settingBtn svg {
+    fill: #ff0000;
 }
 
 #ex_elevPicker_matrixGroupCheckboxLabel {
@@ -195,137 +218,3 @@
 #ex_elevPicker_pageVersion {
     opacity: 0.5;
 }
-
-/* #ex_elevPicker_container {
-    margin: 10px 0px;
-    padding: 25px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-#ex_elevPicker_randomBtnDiv {
-    display: inline-block;
-}
-
-#ex_elevPicker_getBtn {
-    border-radius: 5px;
-    border: none;
-    padding: 7px 0px;
-    line-height: 20px;
-    cursor: pointer;
-    letter-spacing: 1px;
-    width: 185px;
-    font-size: 14px;
-    background-color: #C85B5B;
-    color: white;
-    text-align: center;
-}
-
-#ex_elevPicker_settingsBtnDiv {
-    display: inline-block;
-    margin-left: 25px;
-    border-left: 2px solid black;
-    border-right: 2px solid black;
-    padding-right: 25px;
-    padding-left: 25px;
-}
-
-#ex_elevPicker_resetBtn {
-    letter-spacing: 1px;
-    border: none;
-    border-radius: 5px;
-    padding: 7px 0px;
-    line-height: 15px;
-    width: 125px;
-    background-color: #F5E762;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-    margin-right: 15px;
-}
-
-#ex_elevPicker_settingsBtn {
-    letter-spacing: 1px;
-    border: none;
-    border-radius: 5px;
-    padding: 7px 0px;
-    line-height: 15px;
-    width: 125px;
-    background-color: #F5E762;
-    cursor: pointer;
-    text-align: center;
-    display: inline-block;
-}
-
-#ex_elevPicker_settingsBtn, #ex_elevPicker_getBtn {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-#ex_elevPicker_pageTitle {
-    display: inline-block;
-    margin-left: 25px;
-    font-size: 16px;
-}
-
-#ex_elevPicker_noPickNumbersInputDiv {
-    padding: 15px 0px;
-    border-radius: 5px;
-    border: 2px solid #F5E762;
-    padding-left: 5px;
-}
-
-#ex_elevPicker_settingsDiv {
-    padding: 10px;
-    border-top: 1px solid black;
-    margin-top: 10px;
-}
-
-#ex_elevPicker_noPickNumbersInput {
-    border: 2px solid black;;
-    border-radius: 5px;
-    padding: 5px;
-    width: 150px;
-}
-
-#ex_elevPicker_noPickNumbersInputText {
-    display: inline-block;
-    margin-left: 10px;
-    font-size: 14px;
-}
-
-#ex_elevPicker_noPickNumbersInputEkstraText {
-    margin-top: 3px;
-    font-size: 14px;
-}
-
-#ex_elevPicker_exInfo {
-    margin: 10px 0px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #C85B5B;
-    border-radius: 5px;
-}
-
-#ex_elevPicker_studentNr {
-    text-align: right;
-}
-
-#ex_elevPicker_pageVersionDiv {
-    margin-top: 10px;
-}
-
-#ex_elevPicker_pageVersion {
-    font-style: italic;
-    opacity: 0.5;
-}
-
-#ex_elevPicker_onpageHelpLink {
-    opacity: 1;
-    margin-top: 100px;
-    font-style: normal;
-} */

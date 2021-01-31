@@ -54,7 +54,7 @@ secondRowBtnsDiv.appendChild(resetBtn);
 
 // The settings button
 var settingsBtn = document.createElement('div');
-settingsBtn.innerHTML = 'Indstillinger';
+settingsBtn.innerHTML = '<span id="ex_elevpicker_settings_btn_text">Indstillinger</span><span title="Der er nogen ændringer i indstillninger" id="ex_elevpicker_student_picked_info_settingBtn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></span>';
 settingsBtn.setAttribute('id', 'ex_elevPicker_settingsBtn');
 secondRowBtnsDiv.appendChild(settingsBtn);
 
@@ -79,7 +79,7 @@ noPickNumbersInputDiv.appendChild(noPickNumbersInput);
 
 // Div for text after input
 var noPickNumbersInputText = document.createElement('div');
-noPickNumbersInputText.innerHTML = 'Elever som ikke skal trækkes <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover">(ElevPicker nummer)</span> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
+noPickNumbersInputText.innerHTML = 'Elever som ikke skal trækkes <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover">(ElevPicker nummer)</span><br><i>tallene skal deles med et komma</i> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
 noPickNumbersInputText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputText');
 noPickNumbersInputDiv.appendChild(noPickNumbersInputText);
 
@@ -168,7 +168,7 @@ noIncludeGroupInputDiv.appendChild(noIncludeGroupInput);
 
 // Div for text after input
 var noIncludeGroupInputText = document.createElement('div');
-noIncludeGroupInputText.innerHTML = 'Elever som ikke skal i nogen gruppe <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover2">(ElevPicker nummer)</span> | <i>tallene skal deles med et komma</i> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
+noIncludeGroupInputText.innerHTML = 'Elever som ikke skal i nogen gruppe <span id="ex_elevPicker_noPickNumbersInputElevPickerSpanHover2">(ElevPicker nummer)</span><br><i>tallene skal deles med et komma</i> | <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#notPullStudent">Hjælp</a>';
 noIncludeGroupInputText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputText');
 noIncludeGroupInputDiv.appendChild(noIncludeGroupInputText);
 
@@ -225,111 +225,6 @@ pageBtnContainer.appendChild(exVersionTextDiv);
 
 exVersionTextDiv.appendChild(exVersionText);
 exVersionTextDiv.appendChild(exHelpLink);
-
-// // Div for the random button
-// var randomBtnDiv = document.createElement('div');
-// randomBtnDiv.setAttribute('id', 'ex_elevPicker_randomBtnDiv');
-// pageBtnContainer.appendChild(randomBtnDiv);
-
-// // The random button
-// var randomBtn = document.createElement('div');
-// randomBtn.innerHTML = 'Vælg tilfældig elev';
-// randomBtn.setAttribute('id', 'ex_elevPicker_getBtn');
-// randomBtnDiv.appendChild(randomBtn);
-// // var randomBtn = document.createElement('button');
-// // randomBtn.innerHTML = 'Find tilfældig elev';
-// // randomBtn.setAttribute('id', 'ex_elevPicker_getBtn');
-// // randomBtnDiv.appendChild(randomBtn);
-
-// // Div for the settings button
-// var settingBtnDiv = document.createElement('div');
-// settingBtnDiv.setAttribute('id', 'ex_elevPicker_settingsBtnDiv');
-// pageBtnContainer.appendChild(settingBtnDiv);
-
-// // The reset button
-// var resetBtn = document.createElement('div');
-// resetBtn.innerHTML = 'Vis alle igen';
-// resetBtn.setAttribute('style', 'display:none;');
-// resetBtn.setAttribute('id', 'ex_elevPicker_resetBtn');
-// settingBtnDiv.appendChild(resetBtn);
-
-// // Input for to show reset button
-// var resetBtnInputCheck = document.createElement('input');
-// resetBtnInputCheck.setAttribute('value', '');
-// resetBtnInputCheck.setAttribute('id', 'ex_elevPicker_resetBtnInput');
-// resetBtnInputCheck.setAttribute('style', 'display:none;');
-// settingBtnDiv.appendChild(resetBtnInputCheck);
-
-// // The settings button
-// var settingsBtn = document.createElement('div');
-// settingsBtn.innerHTML = 'Indstillinger';
-// settingsBtn.setAttribute('id', 'ex_elevPicker_settingsBtn');
-// settingBtnDiv.appendChild(settingsBtn);
-// // var settingsBtn = document.createElement('button');
-// // settingsBtn.innerHTML = 'Indstillinger';
-// // settingsBtn.setAttribute('id', 'ex_elevPicker_settingsBtn');
-// // settingsBtn.setAttribute('onclick', 'ex_settingsBtn()');
-// // settingBtnDiv.appendChild(settingsBtn);
-
-// // Extension nave div with text
-// var exText = document.createElement('div');
-// exText.innerHTML = 'Lectio ElevPicker';
-// exText.setAttribute('id', 'ex_elevPicker_pageTitle');
-// pageBtnContainer.appendChild(exText);
-
-// // Settings div
-// var settingDiv = document.createElement('div');
-// settingDiv.setAttribute('id', 'ex_elevPicker_settingsDiv');
-// settingDiv.setAttribute('style', 'display: none;');
-// pageBtnContainer.appendChild(settingDiv);
-
-// // Not to pick numbers input div
-// var noPickNumbersInputDiv = document.createElement('div');
-// noPickNumbersInputDiv.setAttribute('id', 'ex_elevPicker_noPickNumbersInputDiv');
-// settingDiv.appendChild(noPickNumbersInputDiv);
-
-// // Input for number not to pick at random
-// var noPickNumbersInput = document.createElement('input');
-// noPickNumbersInput.setAttribute('id', 'ex_elevPicker_noPickNumbersInput');
-// noPickNumbersInput.setAttribute('placeholder', '8,10,20,24,...');
-// noPickNumbersInput.setAttribute('value', '');
-// noPickNumbersInputDiv.appendChild(noPickNumbersInput);
-
-// // Div for text after input
-// var noPickNumbersInputText = document.createElement('div');
-// noPickNumbersInputText.innerHTML = '<u>Tal som ikke skal trækkes</u>';
-// noPickNumbersInputText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputText');
-// noPickNumbersInputDiv.appendChild(noPickNumbersInputText);
-
-// // Div for ekstra info for no numbers input
-// var noPickNumbersInputEkstraText = document.createElement('div');
-// noPickNumbersInputEkstraText.innerHTML = 'Talene skal <b><u>ikke</u></b> skrives som 08 men 8 og adskildes med komma, fx. (8,11,20).<br>Det er Lectio ElevPicker nummeret man skal skrive.';
-// noPickNumbersInputEkstraText.setAttribute('id', 'ex_elevPicker_noPickNumbersInputEkstraText');
-// noPickNumbersInputDiv.appendChild(noPickNumbersInputEkstraText);
-
-// // UPS in settings
-// var exInfo = document.createElement('div');
-// exInfo.innerHTML = 'Lectio ElevPicker vælger en elev ud fra deres plads i tabellen og ikke deres elev nummer.<br><br><a target="_blank" href="https://github.com/orc13a/Lectio-ElevPicker">Lectio ElevPicker\'s kode (Link til GitHub)</a>';
-// exInfo.setAttribute('id', 'ex_elevPicker_exInfo');
-// settingDiv.appendChild(exInfo);
-
-// var exHelpLink = document.createElement('a');
-// exHelpLink.innerHTML = 'Hjælp til Lectio ElevPicker';
-// exHelpLink.setAttribute('href', 'https://orc13a.github.io/Lectio-ElevPicker/help.html');
-// exHelpLink.setAttribute('target', '_blank');
-// exHelpLink.setAttribute('id', 'ex_elevPicker_onpageHelpLink');
-
-// // Extension version text
-// var exVersionText = document.createElement('span');
-// exVersionText.innerHTML = '1.1.0 | '; // page version
-// exVersionText.setAttribute('id', 'ex_elevPicker_pageVersion');
-
-// var exVersionTextDiv = document.createElement('div');
-// exVersionTextDiv.setAttribute('id', 'ex_elevPicker_pageVersionDiv');
-// pageBtnContainer.appendChild(exVersionTextDiv);
-
-// exVersionTextDiv.appendChild(exVersionText);
-// exVersionTextDiv.appendChild(exHelpLink);
 
 // ----------------------------
 // Check toggel
