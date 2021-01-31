@@ -64,12 +64,12 @@ groupsStuAmountInput.addEventListener('input', function () {
 createBtn.addEventListener('click', function () {
     if (createBtnStatus === true) {
         if (Number(groupsAmountInput.value)) {
-            if (groupsAmountInput.value.length > 0) {
+            if (groupsAmountInput.value.length > 0 && eleverArr.length > 1) {
                 createGroupsByGroups(Number(groupsAmountInput.value));
             }
         }
         if (Number(groupsStuAmountInput.value)) {
-            if (groupsStuAmountInput.value.length > 0) {
+            if (groupsStuAmountInput.value.length > 0 && eleverArr.length > 1) {
                 createGroupsByStudents(Number(groupsStuAmountInput.value));
             }
         }

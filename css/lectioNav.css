@@ -44,11 +44,12 @@
     /*margin-left: -76px;*/
     color: #FFFFFF;
     background: #333333;
-    line-height: 16px;
+    line-height: 18px;
     text-align: left;
     border-radius: 8px;
     box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.25);
     padding: 10px;
+    cursor: default;
 }
 .ex_tooltip:after {
     content: '';
@@ -62,6 +63,16 @@
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
 }
+
+#ex_elevpicker_share {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#ex_tool_code {
+    font-size: 10px;
+}
+
 
 
 #ex_tooltip-wrapper_hint {
@@ -146,4 +157,102 @@
     border-bottom: 8px solid #000000;
     border-right: 8px solid transparent;
     border-left: 8px solid transparent;
+}
+
+#ex_elevpicker_path_one_div, #ex_elevpicker_path_two_div {
+    display: block;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgba(245, 231, 98, 0.15);
+    border: 2px solid #F5E762;
+}
+
+#ex_elevpicker_path_one_closeBtnDiv {
+    display: inline-table;
+    text-align: right;
+    width: 9.5%;
+    cursor: pointer;
+    /* vertical-align: middle; */
+}
+
+#ex_elevpicker_closeSvg {
+    transition: 0.3s;
+}
+
+#ex_elevpicker_closeSvg:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 100px;
+    transition: 0.3s;
+}
+
+#ex_elevpicker_path_two_div {
+    padding-bottom: 5px;
+}
+
+#ex_elevpicker_path_one_h4, #ex_elevpicker_path_two_h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: inline-table;
+    width: 90%;
+}
+
+/* #ex_elevpicker_path_one_h4 {
+    display: inline-table;
+    width: 90%;
+} */
+
+#ex_elevpicker_path_one_p, #ex_elevpicker_path_two_p {
+    font-size: 16px;
+}
+
+#ex_elevpicker_path_two_span_hint {
+    text-decoration: underline;
+    cursor: help;
+}
+
+#ex_elevpicker_path_two_span_hint:hover {
+    text-decoration: none;
+}
+
+#ex_elevpicker_shareDiv {
+    margin-left: auto;
+    margin-top: 35px;
+    /* border: 2px solid lightgray;
+    border-radius: 10px; */
+    padding: 10px;
+    text-align: right;
+}
+
+#ex_elevpicker_share_copy_btn {
+    display: inline-block;
+    /* border: 2px solid gray; */
+    border-radius: 10px;
+    line-height: 23px;
+    cursor: pointer;
+    padding: 4px 12px;
+    font-size: 14px;
+    /* margin: 0px 0px 0px 7px; */
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+#ex_elevpicker_share_copy_btn:hover {
+    box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.05);
+}
+
+#ex_elevpicker_share_copy_svg {
+    vertical-align: middle;
+    position: relative;
+    bottom: 2px;
+}
+
+#ex_elevpicker_share_link_copy_input {
+    position: relative;
+    z-index: -999;
+    height: 0px;
+    width: 0px;
+}
+
+#ex_elevpicker_shareSpanText {
+    font-size: 13px;
 }

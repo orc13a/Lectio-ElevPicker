@@ -50,7 +50,7 @@ randomBtnListener.addEventListener('click', function () {
     var resetBtn2 = document.getElementById('ex_elevPicker_resetBtn');
     randomBtnListener.innerHTML = 'Vælg tilfældig elev igen';
 
-    if (resetBtn2.classList.contains('dis') === true || randomBtnListener.innerHTML === 'Vælg tilfældig elev igen') {
+    if (resetBtn2.classList.contains('dis') === true || randomBtnListener.innerHTML === 'Vælg tilfældig elev igen' && eleverArr.length > 1) {
 
         var max = eleverArr.length - 1;
         var min = 0;

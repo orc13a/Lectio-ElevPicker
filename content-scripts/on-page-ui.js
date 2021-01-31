@@ -216,7 +216,7 @@ exHelpLink.setAttribute('id', 'ex_elevPicker_onpageHelpLink');
 
 // Extension version text
 var exVersionText = document.createElement('span');
-exVersionText.innerHTML = '1.1.0 | '; // page version
+exVersionText.innerHTML = '2.0.0 | '; // page version
 exVersionText.setAttribute('id', 'ex_elevPicker_pageVersion');
 
 var exVersionTextDiv = document.createElement('div');
