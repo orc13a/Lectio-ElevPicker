@@ -216,12 +216,16 @@
 }
 
 #ex_elevpicker_shareDiv {
-    margin-left: auto;
+    display: block;
     margin-top: 35px;
     /* border: 2px solid lightgray;
     border-radius: 10px; */
     padding: 10px;
     text-align: right;
+}
+
+#ex_elevpicker_helpLinkDiv {
+    display: block;
 }
 
 #ex_elevpicker_share_copy_btn {

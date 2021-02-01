@@ -24,6 +24,11 @@ chrome.runtime.onInstalled.addListener((details) => {
             break;
         case 'update':
             //console.log('User has updated their extension.');
+            if (currentVersion === '2.0.0') {
+                chrome.tabs.create({
+                    url: "https://orc13a.github.io/Lectio-ElevPicker/update#2-0-0.html"
+                });
+            }
             break;
         case 'chrome_update':
         case 'shared_module_update':
