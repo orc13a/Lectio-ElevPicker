@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lectio ElevPicker | Rapporter fejl</title>
+    <title>Lectio ElevPicker | Opdateringer</title>
     <link rel="icon" href="https://raw.githubusercontent.com/orc13a/Lectio-ElevPicker/github-page/images/icon16_v2.png" type="image/png" sizes="16x16">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
@@ -55,30 +55,19 @@
     </div>
     <!-- HELP CONTENT -->
     <div class="helpContent" id="helpPageContent" style="min-height: 400px;">
-        <h2>
-            Har du fundet en fejl eller har du en ide til ElevPicker?
+        <h2 id="2-0-0">
+            Opdatering 2.0.0
         </h2>
         <p>
-            Hvis du har fået en fejl / bug i ElevPicker, så ville det være til stor hjælp at skrive hvad du har fundet til mig.<br>
-            Du kan kontakte mig ved at skrive til mig på e-mail <code>orc-developer@outlook.com</code>. Eller så kan du bruge kontakt funktionen på ElevPickers Google webshop.<br>
-            <br>
-            Du finder kontakt funktionen her: <a target="_blank" href="https://chrome.google.com/webstore/detail/lectio-elevpicker/gcipcglhgdgdcjipdmlgfhgmcbeoenem">ElevPicker - Google app store</a><br>
-            Sådan gør du på Google webshop:
-            <ul>
-                <li>
-                    Over skærm-billederne af ElevPicker er der fire knapper, der skal du klikke på <code>Support</code>.<br>
-                    <img class="helpImg" width="auto" height="200" src="./images/googleWebshop-support.png">
-                </li>
-                <li>
-                    Efter går du ned til du finder hvor man kan skrive til mig, du finder det under <code>Kontakt udvikleren</code>.<br>
-                    Så vælger du om du vil skrive et spørgsmål eller et forslag eller om du har fundet et problem.<br>
-                    <img class="helpImg" width="auto" height="500" src="./images/googleWebshop-contact.png">
-                </li>
-            </ul>
-            Du finder kontakt funktionen her: <a target="_blank" href="https://chrome.google.com/webstore/detail/lectio-elevpicker/gcipcglhgdgdcjipdmlgfhgmcbeoenem">ElevPicker - Google app store</a>
+            
         </p>
     </div>
     <!-- HELP CONTENT END -->
+    <div title="Tilbage til toppen" id="toTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+        </svg>
+    </div>
     <!-- FOOTER -->
     <div class="footerContainer">
         <p>
@@ -91,4 +80,23 @@
     <!-- FOOTER END -->
 </body>
 <script src="./js/safariCheck.js"></script>
+<script>
+    if (safariCheck() === true) {
+        document.getElementById('helpPageContent').style.display = 'none';
+    }
+
+    let toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', function() {
+        if (this.scrollY > 400) {
+            toTopBtn.style.display = 'block';
+        } else {
+            toTopBtn.style.display = 'none';
+        }
+    });
+
+    $("#toTop").click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
+    });
+</script>
+<!--<script src="./js/page-viewer-controler.js"></script>-->
 </html>
