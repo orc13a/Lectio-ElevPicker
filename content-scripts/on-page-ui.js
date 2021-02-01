@@ -113,7 +113,7 @@ pageBtnContainer.appendChild(groupDiv);
 
 // Make group div info text div
 var groupInfoDiv = document.createElement('div');
-groupInfoDiv.innerHTML = 'Du kan enten bruge "<span id="ex_elevpicker_groupAmountInfo">Antal grupper</span>" eller "<span id="ex_elevpicker_groupsInfo">Antal elever pr. gruppe</span>". Bare udfyld en af dem og dermed vil du have mulighed for at lave grupper. Eller så kan du få mere <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#groupInputs">hjælp her</a>.';
+groupInfoDiv.innerHTML = 'Du kan enten bruge "<span id="ex_elevpicker_groupAmountInfo">Antal grupper</span>" eller "<span id="ex_elevpicker_groupsInfo">Antal elever pr. gruppe</span>".<br>Bare udfyld en af dem og dermed vil du have mulighed for at lave grupper.<br>Eller så kan du få mere <a target="_blank" href="https://orc13a.github.io/Lectio-ElevPicker/help.html#groupInputs">hjælp her</a>.';
 groupInfoDiv.setAttribute('id', 'ex_elevPicker_groupInfoDiv');
 groupDiv.appendChild(groupInfoDiv);
 
