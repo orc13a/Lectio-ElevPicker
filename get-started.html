@@ -225,6 +225,10 @@
 <script src="./js/gifBtn.js"></script>
 <script src="./js/page-viewer-controler.js"></script>
 <script>
+    if (safariCheck() === true) {
+        document.getElementById('getStartedPageContent').style.display = 'none';
+    }
+
     let toTopBtn = document.getElementById('toTop');
     window.addEventListener('scroll', function() {
         if (this.scrollY > 400) {
