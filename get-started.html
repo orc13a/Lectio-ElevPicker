@@ -78,39 +78,45 @@
             </div>
         </div>
         <h2 style="margin-top: 20px;" id="efterinstallation">Det første efter installation</h2>
-        <div class="ABC aBrowserContent" id="Chrome_pagecontent" style="display: none;">
+        <!-- <div class="ABC aBrowserContent" id="Chrome_pagecontent" style="display: none;">
             <p class="p-headsup">
                 ElevPicker er kun lavet til at virke inde på Lectio. Så man behøver ikke at bruge extension ved at klikke på dens ikon.<br>
                 Så dette emne kan du springe over, men du er mere end velkommen til at læse det. Men vigtigere informationer kommer i "<a class="link" href="#hvordanbrugerjegelevpicker">Hvordan bruger jeg ElevPicker</a>". 
             </p>
-        </div>
+        </div> -->
         <p>
-            Efter du har tilføjet ElevPicker til <span class="ABC" id="browser_t"></span> bliver extensionen lagt op til højre i din browser.
+            Efter du har tilføjet ElevPicker til <span class="ABC" id="browser_t"></span> bliver extensionen lagt op til højre i din browser.<br>
         </p>
         <div class="ABC aBrowserContent" id="Chrome_pagecontent" style="display: none;">
             <p>
-                Det kan godt ske at ElevPicker er blevet gemt inde bag ved puslespilsbrikken.<br>
-                Hvis det er sagen, så for at finde ElevPicker skal du først klikke på brikken få at kunne se og klikke på ElevPicker.
+                <b><i>Men det er ikke vigtigt for at kunne bruge ElevPicker på Lectio, så hvis du bare vil bruge ElevPicker så gå vidre til <a href="./get-started.html#hvordanbrugerjegelevpicker">Hvordan bruger jeg ElevPicker?</a> afsnitet.</i></b><br>
+                Hvis du gerne vil læse mere om hvordan du finder ElevPicker i din browser så <span id="chrome_corner_more_infoBtn">læs mere her</span>.
             </p>
-            <p>
-                Hvis du vil slippe for at skulle klikke på puslespilsbrikken hver gang du vil klikke på ElevPicker, så kan du gøre følgende for at få ElevPicker til at blive ude for puslespilsbrikken, og side ved siden af brikken oppe i højre hjørne af din browser.<br>
-                <br>
-            </p>
-            <ol>
-                <li>
-                    Klik på puslespilsbrikken.
-                </li>
-                <li>
-                    Find ElevPicker.
-                </li>
-                <li>
-                    Ud fra ElevPicker kan du klikke på <code>tegnestift / knappenål</code> ikonet eller klikke på de tre prikker og derefter <code>fastgør</code>.
-                </li>
-            </ol>
-            <div class="gifHelpContainer">
-                <button class="gifHelpBtn" id="Chrome_puzzelGifBtn" onclick="gifHelp(this, 'Chrome_puzzelBtn')">Se video</button>
-                <div class="gifHelpDiv" id="Chrome_puzzelBtn" style="display: none;">
-                    <img class="gifHelp" src="./images/gifs/Chrome-puzzle.gif" height="auto" width="400">
+            <div id="chrome_corner_more_info" style="display: none;">
+                <p>
+                    Det kan godt ske at ElevPicker er blevet gemt inde bag ved puslespilsbrikken.<br>
+                    Hvis det er sagen, så for at finde ElevPicker skal du først klikke på brikken få at kunne se og klikke på ElevPicker.
+                </p>
+                <p>
+                    Hvis du vil slippe for at skulle klikke på puslespilsbrikken hver gang du vil klikke på ElevPicker, så kan du gøre følgende for at få ElevPicker til at blive ude for puslespilsbrikken, og side ved siden af brikken oppe i højre hjørne af din browser.<br>
+                    <br>
+                </p>
+                <ol>
+                    <li>
+                        Klik på puslespilsbrikken.
+                    </li>
+                    <li>
+                        Find ElevPicker.
+                    </li>
+                    <li>
+                        Ud fra ElevPicker kan du klikke på <code>tegnestift / knappenål</code> ikonet eller klikke på de tre prikker og derefter <code>fastgør</code>.
+                    </li>
+                </ol>
+                <div class="gifHelpContainer">
+                    <button class="gifHelpBtn" id="Chrome_puzzelGifBtn" onclick="gifHelp(this, 'Chrome_puzzelBtn')">Se video</button>
+                    <div class="gifHelpDiv" id="Chrome_puzzelBtn" style="display: none;">
+                        <img class="gifHelp" src="./images/gifs/Chrome-puzzle.gif" height="auto" width="400">
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,6 +236,21 @@
 
     $("#toTop").click(function () {
         $("html, body").animate({scrollTop: 0}, 1000);
+    });
+
+    let chromeCornerInfo = document.getElementById('chrome_corner_more_info');
+    let chromeCornerInfoBtn = document.getElementById('chrome_corner_more_infoBtn');
+
+    chromeCornerInfoBtn.addEventListener('click', function() {
+        if (chromeCornerInfo.style.display === 'none') {
+            chromeCornerInfo.style.display = 'block';
+            chromeCornerInfoBtn.innerHTML = '<b>luk igen</b>';
+            chromeCornerInfoBtn.style.color = '#C85B5A';
+        } else {
+            chromeCornerInfo.style.display = 'none';
+            chromeCornerInfoBtn.innerHTML = 'læs mere her';
+            chromeCornerInfoBtn.style.color = null;
+        }
     });
 </script>
 </html>

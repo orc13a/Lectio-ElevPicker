@@ -270,3 +270,13 @@ li {
     border: 2px solid lightgray;
     margin: 10px 0px;
 }
+
+#chrome_corner_more_infoBtn {
+    text-decoration: underline;
+    cursor: pointer;
+    color: black;
+}
+
+#chrome_corner_more_infoBtn:hover {
+    text-decoration: none;
+}
