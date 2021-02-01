@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <!-- NAV -->
@@ -193,8 +194,16 @@
                 </div>
             </div>
         <!-- </div> -->
+        <p style="color: gray;">
+            Sidst opdateret 1 / 02 - 2021
+        </p>
     </div>
     <!-- GET STARTED CONTENT END -->
+    <div title="Tilbage til toppen" id="toTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+        </svg>
+    </div>
     <!-- FOOTER -->
     <div class="footerContainer">
         <p>
@@ -209,4 +218,18 @@
 <script src="./js/safariCheck.js"></script>
 <script src="./js/gifBtn.js"></script>
 <script src="./js/page-viewer-controler.js"></script>
+<script>
+    let toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', function() {
+        if (this.scrollY > 400) {
+            toTopBtn.style.display = 'block';
+        } else {
+            toTopBtn.style.display = 'none';
+        }
+    });
+
+    $("#toTop").click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
+    });
+</script>
 </html>

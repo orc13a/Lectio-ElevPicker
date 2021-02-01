@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <!-- NAV -->
@@ -84,12 +85,12 @@
                 <h4>Er Lectio ElevPicker farlig?</h4>
                 Lectio ElevPicker er ikke farlig eller gør ikke nogen skade på din computer. Alle extensions i Google Chrome eller Firefox bliver kigget igennem af AI og Google / Firefox udviklere.
     
-                En extension bliver ikke udgivet før den er godkendt. Det skal den hver at Lectio ElevPicker skal opdateres.
+                En extension bliver ikke udgivet før den er godkendt. Det skal den hver gang at Lectio ElevPicker skal opdateres.
     
                 <h4>Gemmer Lectio ElevPicker nogen af min data fra Lectio eller andre steder på nettet?</h4>
                 Lectio ElevPicker gemmer ikke nogen personlige informationer om nogen.
     
-                I fremtiden kommer der måske en funktion som gememr de elev fra en klasse som er blevet valgt før. Der kommer Lectio ElevPicker til at gemme elevernes ElevPicker nummer.
+                ElevPicker gemmer elevernes ElevPicker nummer, for at funktionen som går at elever ikke bliver trykket flere gange i træk, kan virke.
             </p>
         </div>
         <br>
@@ -142,6 +143,11 @@
         </div>
     </div>
     <!-- PAGE CONTENT END -->
+    <div title="Tilbage til toppen" id="toTop">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+            <path d="M7.247 4.86l-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+        </svg>
+    </div>
     <!-- FOOTER -->
     <div class="footerContainer">
         <p>
@@ -165,5 +171,18 @@
             window.open('https://addons.mozilla.org/en-US/firefox/addon/lectio-elevpicker/', '_blank');
         }
     }
+
+    let toTopBtn = document.getElementById('toTop');
+    window.addEventListener('scroll', function() {
+        if (this.scrollY > 400) {
+            toTopBtn.style.display = 'block';
+        } else {
+            toTopBtn.style.display = 'none';
+        }
+    });
+
+    $("#toTop").click(function () {
+        $("html, body").animate({scrollTop: 0}, 1000);
+    });
 </script>
 </html>
