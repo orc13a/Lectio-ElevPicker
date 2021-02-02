@@ -63,7 +63,7 @@ chrome.storage.sync.get([className], function(result) {
     } else {
         var ids = result[className];
 
-        if (ids.length != eleverArr.length && ids.length > 0) {
+        if (ids.length != eleverArr.length && ids.length < eleverArr.length && ids.length > 0) {
             var elevPickerIds = [];
             for (let i = 0; i < ids.length; i++) {
                 elevPickerIds.push(Number(ids[i]) + 1);
@@ -97,6 +97,8 @@ function resetClassHistoryStudentsPicked() {
     resetBtn.style.display = 'none';
 }
 
+let sessionPicked = [];
+
 function showWinner(exStudentId) {
     var resetBtn2 = document.getElementById('ex_elevPicker_resetBtn');
     //resetBtn2.style.display = 'inline-block';
@@ -113,12 +115,26 @@ function showWinner(exStudentId) {
         var arr = result[className];
         arr.push(exStudentId);
         chrome.storage.sync.set({[className]: arr});
+
+        if (arr.length == eleverArr.length) {
+            var settingInputNoPickNumberInput = document.getElementById('ex_elevPicker_noPickNumbersInput');
+            var settingAlertIcon = document.getElementById('ex_elevpicker_student_picked_info_settingBtn');
+            var resetInfoText = document.getElementById('ex_elevPicker_resetPickedStudentsDivInfoText');
+            var resetBtn = document.getElementById('ex_elevPicker_resetPickedStudentsDiv');
+
+            settingInputNoPickNumberInput.value = '';
+            settingInputNoPickNumberInput.setAttribute('size', '4');
+
+            settingAlertIcon.style.visibility = 'hidden';
+            resetInfoText.style.display = 'none';
+            resetBtn.style.display = 'none';
+
+            chrome.storage.sync.set({[className]: []});
+        }
     });
 }
 
-let sessionPicked = [];
-
-randomBtnListener.addEventListener('click', function () {
+function randomStudent() {
     var resetBtn2 = document.getElementById('ex_elevPicker_resetBtn');
     randomBtnListener.innerHTML = 'Vælg tilfældig elev igen';
 
@@ -137,7 +153,7 @@ randomBtnListener.addEventListener('click', function () {
             for (let i = 0; i < settingInputNoPickNumberArr.length; i++) {
                 settingInputNoPickNumberArr[i] = Number(settingInputNoPickNumberArr[i] - 1);
             }
-            console.log(settingInputNoPickNumberArr);
+            
             randomNr = getRandomNr(min, max);
 
             if (sessionPicked.length == (max - settingInputNoPickNumberArr.length)) {
@@ -178,6 +194,10 @@ randomBtnListener.addEventListener('click', function () {
             sessionPicked.push(randomNr);
         }
     }
+}
+
+randomBtnListener.addEventListener('click', function () {
+    randomStudent();
 });
 
 // ----------------------------
