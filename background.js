@@ -26,7 +26,7 @@ chrome.runtime.onInstalled.addListener((details) => {
             //console.log('User has updated their extension.');
             if (currentVersion === '2.0.0') {
                 chrome.tabs.create({
-                    url: "https://orc13a.github.io/Lectio-ElevPicker/updates#2-0-0"
+                    url: "https://orc13a.github.io/Lectio-ElevPicker/updates"
                 });
             }
             break;

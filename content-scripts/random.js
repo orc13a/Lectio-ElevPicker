@@ -31,8 +31,11 @@ function getRandomNr(min, max) {
 }
 
 let storageLoadDone = false;
+let storageInputFillCheck = false;
+let storageInputFill = false;
 
-function storageLoad() {
+function storageLoad(storageFill) {
+    storageInputFill = storageFill;
     storageLoadDone = true;
 }
 
@@ -62,7 +65,7 @@ chrome.storage.sync.get([className], function(result) {
         chrome.storage.sync.set({[className]: []}); 
     } else {
         var ids = result[className];
-
+        
         if (ids.length != eleverArr.length && ids.length < eleverArr.length && ids.length > 0) {
             var elevPickerIds = [];
             for (let i = 0; i < ids.length; i++) {
@@ -75,15 +78,17 @@ chrome.storage.sync.get([className], function(result) {
             settingAlertIcon.style.visibility = 'visible';
             resetInfoText.style.display = 'block';
             resetBtn.style.display = 'block';
+            
+            storageInputFillCheck = true;
         } else {
             chrome.storage.sync.set({[className]: []});
         }
     }
-
-    storageLoad();
+    
+    storageLoad(storageInputFillCheck);
 });
 
-function resetClassHistoryStudentsPicked() {
+function resetClassHistoryStudentsPicked(clicked) {
     var settingInputNoPickNumberInput = document.getElementById('ex_elevPicker_noPickNumbersInput');
     var settingAlertIcon = document.getElementById('ex_elevpicker_student_picked_info_settingBtn');
     var resetInfoText = document.getElementById('ex_elevPicker_resetPickedStudentsDivInfoText');
@@ -95,6 +100,10 @@ function resetClassHistoryStudentsPicked() {
     settingInputNoPickNumberInput.setAttribute('size', '4');
     resetInfoText.style.display = 'none';
     resetBtn.style.display = 'none';
+
+    if (clicked === true && clicked != undefined) {
+        storageInputFill = false;
+    }
 }
 
 let sessionPicked = [];
@@ -110,26 +119,19 @@ function showWinner(exStudentId) {
             eleverArr[i].style.display = '';
         }  
     }
-
+    
     chrome.storage.sync.get([className], function(result) {
         var arr = result[className];
+        
         arr.push(exStudentId);
         chrome.storage.sync.set({[className]: arr});
 
         if (arr.length == eleverArr.length) {
-            var settingInputNoPickNumberInput = document.getElementById('ex_elevPicker_noPickNumbersInput');
-            var settingAlertIcon = document.getElementById('ex_elevpicker_student_picked_info_settingBtn');
-            var resetInfoText = document.getElementById('ex_elevPicker_resetPickedStudentsDivInfoText');
-            var resetBtn = document.getElementById('ex_elevPicker_resetPickedStudentsDiv');
-
-            settingInputNoPickNumberInput.value = '';
-            settingInputNoPickNumberInput.setAttribute('size', '4');
-
-            settingAlertIcon.style.visibility = 'hidden';
-            resetInfoText.style.display = 'none';
-            resetBtn.style.display = 'none';
-
             chrome.storage.sync.set({[className]: []});
+            
+            if (storageInputFill === true) {
+                resetClassHistoryStudentsPicked();
+            }
         }
     });
 }
@@ -139,7 +141,7 @@ function randomStudent() {
     randomBtnListener.innerHTML = 'Vælg tilfældig elev igen';
 
     if (storageLoadDone == true && resetBtn2.classList.contains('dis') === true || randomBtnListener.innerHTML === 'Vælg tilfældig elev igen' && eleverArr.length > 1) {
-        
+
         var max = eleverArr.length - 1;
         var min = 0;
         var randomNr;
@@ -155,20 +157,18 @@ function randomStudent() {
             }
             
             randomNr = getRandomNr(min, max);
-
+            
             if (sessionPicked.length == (max - settingInputNoPickNumberArr.length)) {
                 sessionPicked = [];
             }
 
             if (sessionPicked.length > 0 || settingInputNoPickNumberArr.length > 0) {
-            //    if (settingInputNoPickNumberArr.length != 0) {
-                   while (sessionPicked.includes(randomNr) == true || settingInputNoPickNumberArr.includes(randomNr) == true) {
-                        randomNr = getRandomNr(min, max);
-                        if (sessionPicked.includes(randomNr) == false && settingInputNoPickNumberArr.includes(randomNr) == false) {
-                            break;
-                        }
-                   }
-            //    }
+                while (sessionPicked.includes(randomNr) == true || settingInputNoPickNumberArr.includes(randomNr) == true) {
+                    randomNr = getRandomNr(min, max);
+                    if (sessionPicked.includes(randomNr) == false && settingInputNoPickNumberArr.includes(randomNr) == false) {
+                        break;
+                    }
+                }
             }
 
             showWinner(randomNr);

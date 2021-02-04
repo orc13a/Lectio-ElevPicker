@@ -109,5 +109,5 @@ groupCancel.addEventListener('click', function() {
 var historyResetBtn = document.getElementById('ex_elevPicker_resetBtnHistoryStudentPulled');
 
 historyResetBtn.addEventListener('click', function() {
-    resetClassHistoryStudentsPicked(); // random.js
+    resetClassHistoryStudentsPicked(true); // random.js
 });

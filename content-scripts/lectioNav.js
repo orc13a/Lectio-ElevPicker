@@ -1,5 +1,9 @@
 let urlCheck = window.location.href;
 
+// chrome.storage.sync.clear(function () {
+//     console.log('Cleared!!!');
+// });
+
 if (urlCheck.includes('/login.aspx') != true) {
     var url = window.location.href;
     var urlSplit = url.split('/');
