@@ -78,6 +78,11 @@
     transform: rotate(-45deg);
 }
 
+#ex_elevPicker_resetPickedStudentsDiv {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
 #ex_elevPicker_resetBtnHistoryStudentPulled svg {
     vertical-align: middle;
     position: relative;
@@ -92,7 +97,11 @@
 #ex_elevPicker_resetPickedStudentsDivInfoText {
     margin: 10px 0px;
     font-size: 13px;
-    color: #ff0000;
+    /* color: #ff0000; */
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #F5E762;
+    background-color: rgba(245, 231, 98, 0.15);
 }
 
 #ex_elevPicker_settingsBtn {

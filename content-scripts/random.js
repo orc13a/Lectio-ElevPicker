@@ -101,9 +101,9 @@ function resetClassHistoryStudentsPicked(clicked) {
     resetInfoText.style.display = 'none';
     resetBtn.style.display = 'none';
 
-    if (clicked === true && clicked != undefined) {
+    // if (clicked === true && clicked != undefined) {
         storageInputFill = false;
-    }
+    // }
 }
 
 let sessionPicked = [];

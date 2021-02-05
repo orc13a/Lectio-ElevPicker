@@ -94,7 +94,7 @@ noPickNumbersInputDiv.appendChild(resetHistoryStudentsInfoText);
 var resetHistoryStudents = document.createElement('div');
 resetHistoryStudents.setAttribute('id', 'ex_elevPicker_resetPickedStudentsDiv');
 resetHistoryStudents.setAttribute('style', 'display: none;');
-noPickNumbersInputDiv.appendChild(resetHistoryStudents);
+resetHistoryStudentsInfoText.appendChild(resetHistoryStudents);
 
 // The reset button
 var resetBtnHistoryStudent = document.createElement('div');
