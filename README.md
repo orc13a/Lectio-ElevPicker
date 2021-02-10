@@ -1,24 +1,25 @@
 # Lectio ElevPicker
 
-Denne extension er til at vælge en tilfældig elev i Lectio fra en klasse.
+ElevPicker giver dig mulighed for at kunne trække en elev tilfældigt ud fra en klasse i Lectio.
 
-Det kunne være at du skal have en elev op til tavlen for at vise noget for de andre. Men at man ikke gider at vælge nogen efter en rækkefølge eller ingen elever vil op friviligt. 
+På denne måde behøver du ikke at bruge nogen andre hjemmesider, men kan blive på lectio. Dermed slipper du for, at skulle side og skrive alle elevernes navene ind i en anden hjemmesides udtrækningsprogram.
+ElevPicker gør det direkte i Lectio, og dermed behøver du ikke at gå frem og tilbage imellem hjemmesider og gemme osv.
 
-Hvis der er syge eller fraværende elever kan man også sige hvilke tal som ikke skal trækkes tilfældigt.
+ElevPicker gør det også muligt at lave grupper direkte i Lectio.
+ElevPicker gør det altså nemt og hurtigt at danne arbejdsgrupper og matrix grupper ud fra en klasse i Lectio.
 
-# Q&A
+# Spørgsmål om ElevPicker
 
 ### Er Lectio ElevPicker farlig?
 
-Lectio ElevPicker er ikke farlig eller gør ikke nogen skade på din computer. Alle extensions i Google Chrome eller Firefox bliver kigget igennem af AI og Google / Firefox udviklere.
-
-En extension bliver ikke udgivet før den er godkendt. Det skal den hver at Lectio ElevPicker skal opdateres.
+Lectio ElevPicker er ikke farlig, og gør ikke nogen skade på din computer. Alle extensions i Google Chrome eller Firefox bliver kigget igennem af AI og Google / Firefox udviklere.
+    
+En extension bliver ikke udgivet før den er godkendt. Det gælder også min extension hver gang at Lectio ElevPicker skal opdateres.
 
 ### Gemmer Lectio ElevPicker nogen af min data fra Lectio eller andre steder på nettet?
 
-Lectio ElevPicker gemmer ikke nogen personlige informationer om nogen. 
-
-I fremtiden kommer der måske en funktion som gememr de elev fra en klasse som er blevet valgt før. Der kommer Lectio ElevPicker til at gemme elevernes ElevPicker nummer.
+ElevPicker gemmer elevernes ElevPicker nummer, for at funktionen, som gør at elever ikke bliver trukket flere gange i træk, kan virke.
+ElevPicker virker kun på Lectio, og kun der vil koden til ElevPicker blive kørt af din browser. Ellers er den bare i dvale, og venter på du går ind på Lectio.
 
 -------
 Lavet af Oliver Risager Christensen.
